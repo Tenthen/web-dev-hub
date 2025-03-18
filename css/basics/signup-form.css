@@ -57,15 +57,24 @@ input[type="text"], input[type="email"] {
 input[type="text"] {
     text-transform: capitalize;
 }
+input[type="text"]:focus, input[type="email"]:focus {
+    border-bottom: 2px solid #a5a5a5;
+
+}
 input[type="submit"] {
-    flex: 0 0 15em;
+    flex: 0 0 12em;
     margin: 30px 10px 30px auto;
     padding: 15px;
     border: none;
     outline: none;
-    background-color: #234d47;
+    background-color: #047261;
     border-radius: 18px;
     color: #fff;
     cursor: pointer;
+    /* font-weight: bold; */
+    font-size: 1.1em;
    
+}
+input[type="submit"]:hover {
+    background-color: #234d47;
 }
