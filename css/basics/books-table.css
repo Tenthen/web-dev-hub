@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3e5e80;
+}
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+table {
+    /* display: flex;
+    flex: 1 0 80em; */
+}
+
+th {
+    font-size: 0.8em;
+    border-bottom: 2px solid #000;
+    border-top: 1px solid #ddd;
+    text-transform: uppercase;
+    text-align: center;
+}
+th, td {
+    padding: 7px 10px 10px 5px;
+
+}
+
+tr:nth-child(even) {
+    background-color: #efefef;
+}
+tr:hover {
+    background-color: #c3e6e5;
+}
