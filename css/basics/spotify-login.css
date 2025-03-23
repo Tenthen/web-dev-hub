@@ -63,6 +63,7 @@ fieldset {
 
 input[type="text"], input[type="password"] {
     font-family: inherit;
+    font-size: 1.1em;
     flex: 1 0 auto;
     background-color: #464545;
     padding: 10px;
@@ -75,8 +76,47 @@ input[type="text"]:focus, input[type="password"]:focus {
     background-color: #6b6a6a;
 }
 
-input[type="checkbox"] {
-    margin-left: auto;
+.switch {
+    margin-left: 50%;
+    display: inline-block;
+    position: relative;
+    width: 52px;
+    height: 25px;
+    
+}
+.switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.switch .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #404040;
+    border-radius: 18px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+.switch .slider::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 0.4s ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked +  .slider {
+    background-color: #009933;
+}
+.switch input[type="checkbox"]:checked +  .slider::before {
+    transform: translateX(27px);
 }
 
 input[type="submit"], .facebook {
