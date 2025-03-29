@@ -9,111 +9,106 @@
   <body>
     <h1>Market Table</h1>
 
-    <table>
-      <tr class="header">
-        <th colspan="2" class="left">Market Indices</th>
-        <td colspan="2" class="powder">
-          <i class="indicies"></i> All Indicies
-        </td>
-      </tr>
-      <tr class="input">
-        <td colspan="4">
-          <form>
-            <input
-              type="search"
-              name="search"
-              placeholder="Enter company name or Symbol"
-            />
-            <button type="submit"><i class="fa-search">search</i></button>
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td class="powder small">dow</td>
-        <td class="giant">12,189.14</td>
-        <td class="brite">
-          <i class="increament"></i> <i class="negative">-</i>152.69
-        </td>
-        <td><i class="negative">-</i>1.24%</td>
-      </tr>
-      <tr>
-        <td class="powder small">s&p</td>
-        <td class="giant">1,305.75</td>
-        <td class="brite">
-          <i class="increament"></i> <i class="negative">-</i>13.93
-        </td>
-        <td><i class="negative">-</i>1.06%</td>
-      </tr>
-      <tr>
-        <td class="powder small">nasdaq</td>
-        <td class="giant">2,731.64</td>
-        <td class="brite">
-          <i class="increament"></i> <i class="negative">-</i>33.01
-        </td>
-        <td><i class="negative">-</i>1.19%</td>
-      </tr>
-      <tr>
-        <td class="powder small">tr us index</td>
-        <td class="giant">119.44</td>
-        <td class="brite">
-          <i class="increament"></i> <i class="negative">-</i>1.47
-        </td>
-        <td><i class="negative">-</i>1.22%</td>
-      </tr>
+    <section class="market-table">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="4"><span>Market Indices</span>
+              <a href="#">&diam; All Indicies</a>
+            </th>
+          </tr>
+          <tr>
+            <th colspan="4">
+              <div class="search-form">
+                <input type="text" name="search" id="search" placeholder="Enter company name or Symbol">
+                <button type="submit">Search</button>
+              </div>
+            </th>
+          </tr>
+        </thead>
 
-      <tr class="header">
-        <th class="left">Currencies</th>
-        <td></td>
+       <tbody>
+         <tr>
+           <td><a href="">DOW</a></td>
+           <td>12,189.14</td>
+           <td class="negative"><i class="increament"></i> -152.69</td>
+           <td>-1.24%</td>
+         </tr>
+         <tr>
+           <td><a href="">S&amp;P</a></td>
+           <td>1,305.75</td>
+           <td class="negative"><i class="increament"></i> -13.93</td>
+           <td>-1.06%</td>
+         </tr>
+         <tr>
+           <td><a href="">NASDAQ</a></td>
+           <td>2,731.64</td>
+           <td class="negative"><i class="increament"></i> -33.01</td>
+           <td>-1.19%</td>
+         </tr>
+         <tr>
+           <td><a href="">TR US INDEX</a></td>
+           <td>119.44</td>
+           <td class="negative"><i class="increament"></i> -1.47</td>
+           <td>-1.22%</td>
+         </tr>
+       </tbody>
+      </table>
 
-        <td colspan="2" class="powder">
-          <i class="indicies"></i> All Currencies
-        </td>
-      </tr>
-      <tr>
-        <td class="powder small">eur/usd</td>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"><span>Currencies</span>
+              <a href="#">&diam; All Currencies</a>
+            </th>
+          </tr>
+        </thead>
 
-        <td class="center" colspan="2">1.4234</td>
-        <td class="brite"><i class="negative">-</i>1.35%</td>
-      </tr>
-      <tr>
-        <td class="powder small">gbp/usd</td>
+        <tbody>
+          <tr>
+            <td>EUR/USD</td>
+            <td>1.4234</td>
+            <td class="negative">-1.35%</td>
+          </tr>
+          <tr>
+            <td>GBP/USD</td>
+            <td>1.6262</td>
+            <td class="negative">-0.40%</td>
+          </tr>
+          <tr>
+            <td>USD/JYP</td>
+            <td>82.600</td>
+            <td class="negative">-0.63%</td>
+          </tr>
+        </tbody>
+      </table>
 
-        <td class="center" colspan="2">1.6262</td>
-        <td class="brite"><i class="negative">-</i>0.40%</td>
-      </tr>
-      <tr>
-        <td class="powder small">usd/jpy</td>
 
-        <td class="center" colspan="2">82.600</td>
-        <td class="brite"><i class="negative">-</i>0.63%</td>
-      </tr>
-      <!-- <tr>
-			<td class="powder small">usd/jpy</td>
-			
-			<td colspan="2">82.600</td>
-			<td class="brite">-0.63%</td>
-		</tr>
-	 -->
-
-      <tr class="header">
-        <th class="left">Commodities</th>
-        <td></td>
-        <td colspan="2" class="powder">
-          <i class="indicies"></i> All Commodities
-        </td>
-      </tr>
-      <tr>
-        <td class="powder small">gold</td>
-        <td>1,496.20</td>
-        <td class="gress"><i class="positive">+</i>10.20</td>
-        <td class="gress"><i class="positive">+</i>0.68%</td>
-      </tr>
-      <tr>
-        <td class="powder small">silver</td>
-        <td>396.20</td>
-        <td class="gress"><i class="positive">+</i>2.20</td>
-        <td class="gress"><i class="positive">+</i>0.18%</td>
-      </tr>
-    </table>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="4"><span>Commodities</span>
+              <a href="#">&diam; All Commodities</a>
+            </th>
+            
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GOLD</td>
+            <td>1,496.20</td>
+            <td class="positive">+10.20</td>
+            <td class="positive">+0.68%</td>
+          </tr>
+          <tr>
+            <td>SILVER</td>
+            <td>396.20</td>
+            <td class="positive">+2.20</td>
+            <td class="positive">+0.18%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </body>
 </html>
