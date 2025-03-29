@@ -85,7 +85,7 @@ a:hover {
     text-decoration: underline;
 }
 tbody td:nth-child(2) {
-
+    color: #234d47;
     font-weight: bolder;
     font-size: 1.05em;
 }
