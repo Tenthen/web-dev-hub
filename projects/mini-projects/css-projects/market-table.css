@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    color: #234d47;
+    letter-spacing: 0.05em;
+    margin-block-start: 1em;
+}
+.market-table {
+    max-inline-size: 600px;
+    margin-inline: auto;
+    margin-block: 1em;
+    padding: 1em;
+}
+table {
+    inline-size: 100%;
+    margin-block-end: 30px;
+    box-shadow: 8px 6px 10px #0000001a;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #b3d7ff59;
+    font-size: 0.9em;
+    text-align: left;
+    padding: 1em;
+}
+thead th {
+    padding: 0.5em;
+}
+th[colspan] > span {
+    display: inline-block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.2em;
+    padding: 7px;
+    text-align: left;
+    text-transform: uppercase;
+}
+th[colspan] a {
+    text-decoration: none;
+    float: right;
+    color: #0088bb;
+}
+
+.search-form {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.search-form input {
+    flex-grow:0.9;
+    border: 1px solid #bbb;
+    border-radius: 0.5em;
+    padding: 8px;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: darkred;
+}
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #eeeded;
+    font-size: 0.9em;
+}
+tbody td a {
+    text-decoration: none;
+    color: #0088bb;
+    font-weight: bold;
+
+}
+
+tbody td a:hover, th[colspan] a:hover {
+    text-decoration: underline;
+}
+
+td:nth-child(2) {
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #234d47;
+}
+
+tr:nth-child(odd) {
+    background-color: #e6f2ff66;
+}
+
+tr:hover {
+    background-color: #c3e5e6;
+    cursor: pointer;
+}
+
+.increament {
+    display: inline-block;
+    border: solid #f00;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    vertical-align: text-top;
+
+}
+.positive {
+    font-weight: bold;
+    color: #0f0;
+}
+.negative {
+    font-weight: bold;
+    color: #f00;
+}
+
+
+
