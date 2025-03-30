@@ -1,0 +1,65 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #464546;
+    font-size: 1.1em;
+}
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #234d47;
+    letter-spacing: 0.05em;
+    margin-block-start: 2em;
+}
+
+.container {
+    width: 20em;
+    display: flex;
+    justify-content: space-between;
+    margin-inline: auto;
+}
+
+input[type="checkbox"] {
+    width: 0;
+}
+.switch {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 24px;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #807f7f;
+    transition: all 0.2s ease-in-out;
+    border-radius: 1em;
+    cursor: pointer;
+}
+.slider:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #022531;
+    transition: all 0.2s ease-in-out;
+    border-radius: 50%;
+}
+input[type="checkbox"]:checked + .slider {
+    background-color: #008abc;
+}
+
+input[type="checkbox"]:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+
+

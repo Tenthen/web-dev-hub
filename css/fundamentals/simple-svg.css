@@ -1,0 +1,17 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-color: #000; */
+
+}
+.svg-container {
+    text-align: center;
+}
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    color: #234d47;
+    margin-top: 2em;
+}
