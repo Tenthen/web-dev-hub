@@ -1,0 +1,141 @@
+
+:root {
+    --topic-font: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+    --gap-size: 1.5rem;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.1rem;
+  color: #464646;
+  margin: unset;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+  /* max-inline-size: 1080px; */
+  background-color: #07a789;
+  margin-inline: auto;
+  display: flex;
+  flex-flow: wrap;
+  gap: 10px;
+  padding: 1em;
+}
+.main-header  {
+  flex: 100%;
+}
+.main-header h1 {
+    font-family: var(--topic-font);
+    /* font-weight: normal; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffa500;
+    letter-spacing: 0.05em;
+    text-shadow: 8px 8px 6px #0d0e0d;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--gap-size);
+  padding: 0.5rem;
+  list-style: none;
+  background-color: #464646;
+}
+
+.site-nav > li > a {
+  display: block;
+  text-decoration: none;
+  background-color: #ee7e2d;
+  padding: 0.5rem 1rem;
+  /* margin: 10px; */
+  color: #fff;
+}
+
+.site-nav > .nav-right {
+  margin-inline-start: auto;
+}
+.main-content {
+  background-color: #fff;
+  flex: 3 1 67%;
+  padding: clamp(2em, 3em + 1svw, 4em);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.main-content h2, .main-content h3 {
+  font-family: var(--topic-font);
+  text-align: center;
+  text-transform: uppercase;
+  color: #234d47;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+.main-content h3{
+    font-size: 1.2rem;
+}
+.main-content ul {
+    list-style: url(../../assets/image/icon_bullet.png); 
+}
+.main-content .strong-upper {
+    font-family: var(--topic-font);
+    text-transform: uppercase;
+    /* font-weight: normal; */
+    font-size: 1rem;
+    /* color: #072b25; */
+}
+
+.side-form {
+  flex: 0.3 1 30%;
+  display: flex;
+  flex-flow: column;
+}
+.form-section {
+  background-color: #fff;
+}
+.stack > * + * {
+  margin-block-start: 20px;
+}
+.login-section h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  text-align: end;
+  text-transform: uppercase;
+}
+.login-section .form-group {
+  margin: 10px;
+}
+.login-section fieldset {
+  border: none;
+}
+.login-section input[type="submit"] {
+  background-color: #fff;
+  border: 2px solid #ee7e2d;
+  padding: 3px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.signup-section {
+  padding: 1em;
+  text-align: center;
+}
+.signup-section .cost-initial {
+  text-transform: uppercase;
+}
+.signup-section .price {
+  font-size: 1.5rem;
+}
+.signup-section .large {
+  font-size: 1.4em;
+}
+.signup-section button[type="submit"] {
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #ee7e2d;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 12em;
+  text-transform: capitalize;
+}
