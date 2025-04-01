@@ -92,6 +92,7 @@ body {
 }
 .form-section {
   background-color: #fff;
+  flex: 1;
 }
 .stack > * + * {
   margin-block-start: 20px;
@@ -108,10 +109,16 @@ body {
 .login-section fieldset {
   border: none;
 }
+.login-section input:not([type="checkbox"]):not([type="radio"]):not([type=submit]){
+  display: block;
+  inline-size: clamp(80%, 200px + 2%, 90%);
+  padding: 7px;
+}
 .login-section input[type="submit"] {
+  margin-block-start: 1em;
   background-color: #fff;
   border: 2px solid #ee7e2d;
-  padding: 3px 10px;
+  padding: 0.5em 1em;
   outline: none;
   cursor: pointer;
 }
