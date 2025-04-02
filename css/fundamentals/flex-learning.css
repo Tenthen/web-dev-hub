@@ -1,5 +1,5 @@
 :root {
-  --font-topic: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+  --font-topic: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   --gap-size: 1.5rem;
   --brand-color: #234d47;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .main-header h1 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: var(--font-topic);
     font-weight: normal;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -51,8 +51,11 @@ body {
 .container {
     background-color: #f3bc95;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-flow: wrap;
+    justify-content: start;
+    /* align-items: center; */
+    /* align-content: center; */
+    gap: 1em;
     block-size: 15em;
 }
 .container .box {
@@ -65,6 +68,7 @@ body {
 
 }
 .container .first {
+    /* flex: 1 1 0; */
     background-color: #00DDFF;
 }
 .container .second {
