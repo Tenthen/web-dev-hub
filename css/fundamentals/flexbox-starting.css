@@ -86,16 +86,24 @@ body {
 }
 
 .side-form {
-  flex: 0.3 1 30%;
+  flex: 0.3 0 20%;
   display: flex;
   flex-flow: column;
 }
 .form-section {
+  min-inline-size: 18em;
   background-color: #fff;
-  flex: 1;
+  flex: 1 0 auto;
+  padding-block: 1em;
+  
 }
 .stack > * + * {
   margin-block-start: 20px;
+  padding-block: 2em;
+}
+.login-section {
+  width: 90%;
+  margin-inline: auto;
 }
 .login-section h2 {
   font-size: 1.3rem;
@@ -104,14 +112,16 @@ body {
   text-transform: uppercase;
 }
 .login-section .form-group {
-  margin: 10px;
+  margin: 10px unset;
 }
+
 .login-section fieldset {
   border: none;
 }
 .login-section input:not([type="checkbox"]):not([type="radio"]):not([type=submit]){
   display: block;
-  inline-size: clamp(80%, 200px + 2%, 90%);
+  inline-size: 20em;
+  margin-block: 10px;
   padding: 7px;
 }
 .login-section input[type="submit"] {
@@ -128,13 +138,26 @@ body {
 }
 .signup-section .cost-initial {
   text-transform: uppercase;
+  font-size: 1.2rem;
 }
-.signup-section .price {
-  font-size: 1.5rem;
+.signup-section .cost {
+  font-family: var(--topic-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.7;
 }
-.signup-section .large {
-  font-size: 1.4em;
+.signup-section .cost-currency {
+  font-size: 2em;
 }
+.signup-section .cost-dollars {
+  font-size: 4em;
+}
+.signup-section .cost-cents {
+  font-size: 1.5em;
+  align-self: flex-start;
+}
+
 .signup-section button[type="submit"] {
   font-family: inherit;
   font-size: 1rem;
@@ -143,6 +166,7 @@ body {
   border: none;
   outline: none;
   padding: 10px;
-  width: 12em;
+  inline-size: 90%;
   text-transform: capitalize;
+  cursor: pointer;
 }
