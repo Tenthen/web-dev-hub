@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --topic-font: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  --brand-color: #234d47;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #454645;
+  margin: unset;
+}
+.container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  gap: 0.5em;
+}
+
+.main-header {
+    grid-column: 1 / 3;
+    grid-row: span 1;
+    background-image: url(../../assets/image/caffeine-cloud.jpg);
+    background-size: contain;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+} 
+.main-header h1 {
+    inline-size: 7em;
+    grid-column: 2 /4;
+    grid-row: 1 / 3;
+    font-family: UnifrakturMaguntia;
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-transform: lowercase;
+    letter-spacing: 0.3rem;
+    z-index: 1;
+    align-self: center;
+  }
+.main-header .company-slogan {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-inline: 1em;
+    grid-column: 4 /5;
+    grid-row: 1 / 3;
+    font-size: 1.2em;
+    font-style: italic;
+
+}
+nav {
+    grid-column: 1 /5;
+    grid-row: 3 / 4;
+    align-self: end;
+}
+
+.site-nav {
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: unset;
+    background-color: #234d47;
+    margin: unset;
+}
+.site-nav > li > a {
+    display: block;
+    padding: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    text-wrap: nowrap;
+}
+.site-nav > li > a:hover {
+    background-color: #008abc;
+}
+.site-nav .search-nav {
+    align-self: center;
+    margin-left: auto;
+}
+.site-nav .search-nav input[type]{
+     border: 1px solid #bbb;
+     border-radius: 1.5em;
+     padding: 0.6em;
+     background-image: url(../../assets/image/search.png);
+     background-size: 30px;
+     background-repeat: no-repeat;
+     background-position: right;
+     outline: none;
+     font-family: inherit;
+}
+
+.main-content {
+    grid-column: 1/ 2;
+    grid-row: 2 / 3;
+    padding: calc( 3em + 3vw);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.main-content > h1, .side-bar > h2 {
+    font-family: var(--topic-font);
+    font-size: 1.4rem;
+    /* font-weight: normal; */
+    color: var(--brand-color);
+    color: #cc760c;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+.side-bar {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    padding-block-start: 2em;
+}
+.side-bar > h2 {
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+.side-bar .side-links {
+    list-style-type: none;
+    padding-inline-start: unset;
+}
+.side-bar .side-links > li > a {
+    display: block;
+    text-decoration: none;
+    color: #2e758f;
+    padding-block: 0.5em;
+} 
+.side-bar .side-links > li > a:hover  {
+    text-decoration: underline;
+}
+.side-bar > h2 + p {
+    line-height: 1.5;
+}
+.footer {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    background-color: #234d47;
+    color: #fff;
+    display: flex;    
+    justify-content: center;
+    text-align: center;
+}
+.footer .copy-right {
+    align-self: center;
+    font-size: small;
+}
