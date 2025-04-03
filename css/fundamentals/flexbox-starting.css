@@ -16,7 +16,7 @@ body {
 }
 .container {
   /* max-inline-size: 1080px; */
-  background-color: #07a789;
+  background-color: #3ac58b;
   margin-inline: auto;
   display: flex;
   flex-flow: wrap;
@@ -41,7 +41,8 @@ body {
   gap: var(--gap-size);
   padding: 0.5rem;
   list-style: none;
-  background-color: #464646;
+  background-color: #234d47;
+  margin-inline-start: -1;
 }
 
 .site-nav > li > a {
@@ -145,7 +146,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 1.7;
+  line-height: 0.7;
 }
 .signup-section .cost-currency {
   font-size: 2em;
