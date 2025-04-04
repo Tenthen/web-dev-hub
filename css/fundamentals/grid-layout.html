@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grid-layout.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Linked</h1>
+        </header>
+        <nav class="primary-nav">
+            <ul class="site-nav">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/special">Special</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li class="nav-right"><a href="/about">About</a></li>
+            </ul>
+        </nav>
+        <main class="main-content tile-section">
+            <h1>The Invisible Expert</h1>
+            <p><q>But no one knows me. How can I grow?</q></p>
+            <p>You don’t need to be famous. You don’t even need a face. You just need value + strategy. </p>
+        </main>
+        <section class="form-login tile-section">
+            <form action="/login" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="form-username">Username</label>
+                        <input type="text" name="username" id="form-username">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-password">Password</label>
+                        <input type="password" name="password" id="form-password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section class="form-signup tile-section stack">
+            <small>Starting at</small>
+            <div class="cost">
+                <span class="cost-currency">&dollar;</span>
+                <span class="cost-dollars">20</span>
+                <span class="cost-cents">.00</span>
+            </div>
+            <button type="submit">Sign Up</button>
+        </section>
+    </div>
+</body>
+</html>
