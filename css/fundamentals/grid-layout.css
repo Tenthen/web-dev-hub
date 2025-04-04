@@ -1,0 +1,151 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --topic-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --brand-color: #234d47;
+    --gap-size: 1.5rem;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #464546;
+    margin: unset;
+    background-color: #31c7a2;
+}
+.container {
+    display: grid;
+    grid-template-columns: [left-start] 3fr [left-end right-start] 1fr [right-end];
+    grid-template-rows: repeat(4, [row] auto);
+    gap: var(--gap-size);
+}
+.main-header, .primary-nav {
+    grid-column: left-start / right-end;
+    grid-row: span 1;
+}
+
+.main-header > h1, .main-content > h1 {
+    font-family: var(--topic-font);
+    font-size: 2.5rem;
+    color: #f17c29;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 4px 6px 6px #000;
+    letter-spacing: 0.3em;
+
+}
+.primary-nav .site-nav {
+    display: flex;
+    background-color: var(--brand-color);
+    padding-inline-start: unset;
+    list-style-type: none;
+}
+.primary-nav .site-nav > li > a {
+    display: block;
+    padding: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+.primary-nav .site-nav > li > a:hover {
+    background-color: #008abc;
+}
+.primary-nav .site-nav > .nav-right {
+    margin-inline-start: auto;
+}
+.tile-section {
+    padding: 2em;
+    background-color: #fff;
+}
+.main-content {
+    grid-column: left;
+    grid-row: row 3 / span 2;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    padding-inline: calc(2em + 4vw);
+}
+.main-content > h1 {
+    font-size: 1.4rem;
+    color: var(--brand-color);
+    letter-spacing: 0.1em;
+    text-shadow: none;
+}
+.main-content > h1 + p {
+    font-style: italic;
+}
+.form-login {
+    grid-column: right;
+    grid-row: row 3 / span 1;
+    font-size: 1.1rem;
+}
+.form-login fieldset {
+    border: none;
+}
+.form-login .form-group {
+    margin-block: 1.5em;
+}
+.form-login input:not([type=radio]):not([type=checkbox]):not([type=submit]) {
+    display: block;
+    inline-size: clamp(85%, 25em + 2vw, 90%);
+    padding: 0.4em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bbb;
+    margin-block: 0.2em;
+    font-family: inherit;
+    font-size: inherit;
+    transition: border 0.2s ease-in-out;
+
+}
+.form-login input:not([type=radio]):not([type=checkbox]):not([type=submit]):focus {
+    border-bottom: 2px solid #000;
+}
+.form-login input[type="submit"] {
+    inline-size: 5em;
+    background-color: #fff;
+    padding: 0.3em;
+    border: 2px solid #f17c29;
+    outline: none;
+    font-size: 1.05em;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.form-signup {
+    grid-column: right;
+    grid-row: row 4 / span 1;
+    text-align: center;
+    font-size: 1.3rem;
+
+}
+
+.form-signup > small {
+    text-transform: uppercase;
+
+}
+.form-signup .cost {
+    display: flex;
+    justify-content: center;
+    line-height: 0.7;
+    margin-block: 1.5em;
+}
+.form-signup .cost-currency {
+    font-size: 2rem;
+}
+.form-signup .cost-dollars {
+    font-size: 4rem;
+}
+.form-signup .cost-cents {
+    font-size: 1.5rem;
+}
+.form-signup > button[type="submit"] {
+    inline-size: 12em;
+    background-color: #f17c29;
+    color: #fff;
+    padding: 0.5em;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    cursor: pointer;
+}
