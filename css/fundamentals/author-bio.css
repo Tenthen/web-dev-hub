@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+    --gap-size: 1.5em;
+    --brand-color: #234d47;
+    --topic-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #454545;
+    /* margin: unset; */
+}
+.author-bios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-rows: repeat(3, auto); */
+    gap: var(--gap-size);
+    max-inline-size: 1080px;
+    margin: 5em auto;
+    padding: 2em;
+}
+.card {
+    position: relative;
+    display: grid;
+    grid-row: span 3;
+    /* grid-template-rows: max-content auto max-content; */
+    grid-template-rows: subgrid;
+    background-color: #fff;
+    padding: 5em 2em 2em;
+    box-shadow: 4px 4px 16px #444;
+    border-radius: 1em;
+    margin-block-start: 5em;
+    font-size: 1.1rem;
+}
+.card > img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    border-radius: 50%;
+}
+.card > h3 {
+    font-family: var(--topic-font);
+    font-size: 1.3rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--brand-color);
+    margin-block: unset;
+    align-self: end;
+}
+.card > h3 + div {
+    line-height: 1.5;
+}
+
+.card .read-more {
+    margin-block-start: 1em; 
+    text-align: right;
+}
+.card .read-more > a {
+    text-decoration: none;
+    color: #008abc;
+}
