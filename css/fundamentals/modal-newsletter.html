@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="modal-newsletter.css" />
+    <title>Modal Newsletter</title>
+  </head>
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what's going on at Wombat Coffee each month. Sign up for our
+          newsletter:
+          <button type="button" class="open" id="open">Sign Up</button>
+        </p>
+      </div>
+    </header>
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-body">
+            <button type="button" class="close" id="close">Close</button>
+            <h3>Wombat Newsletter</h3>
+            <p>Sign up for our monthly newsletter. No spam. We promise!</p>
+            <form action="/modal_newsletter" method="post" class="modal-form">
+                <fieldset>
+                    <legend>Newsletter</legend>
+                    <div class="form-group">
+                        <label for="form-username">Name</label>
+                        <input type="text" name="username" id="form-username">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-email">Email</label>
+                        <input type="email" name="email" id="form-email">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Wombat Coffee Roaster</h1>
+    </div>
+  </body>
+</html>
