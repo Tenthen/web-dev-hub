@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+    --topic-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --brand-color: #d2691e;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #454545;
+    margin: unset;
+    font-size: 1.1em;
+}
+.top-banner {
+    padding: 0.5em;
+    background-color: #ffd698;
+    box-shadow: 0 1px 5px #0000001a;
+}
+.top-banner-inner {
+    inline-size: 80%;
+    max-inline-size: 1000px;
+    margin-inline: auto;
+}
+.open, .modal .close {
+    inline-size: 10em;
+    background-color: #d2691e;
+    padding: 0.6em 1em;
+    border-radius: 1em;
+    margin: 1em;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+}
+.container {
+    inline-size: 80%;
+    max-inline-size: 1000px;
+    padding: 1em;
+}
+.container > h1, .modal > .modal-body > h3 {
+    font-family: var(--topic-font);
+    font-weight: normal;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    /* margin-inline: auto; */
+    color: var(--brand-color);
+
+}
+.modal {
+    /* display: none; */
+    position: relative;
+    background-color: #fff;
+    /* position: fixed;
+    top: 3em;
+    right: 10%;
+    left: 10%; */
+    padding: 3em;
+    
+}
+.modal .is-open {
+    display: block;
+}
+.modal .modal-dropbox {
+    position: fixed;
+    inset: 0;
+    background-color: #00000080;
+}
+.modal .close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    inline-size: 7em;
+}
+.modal > .modal-body > h3 {
+    font-size: 1.4rem;
+}
+.modal .modal-form {
+    max-inline-size: 600px;
+    margin-inline: auto;
+}
+.modal .modal-form > fieldset {
+    border: 1px solid #bbb;
+    border-radius: 2em;
+    padding-inline: 2em;
+
+}
+.modal .modal-form  legend {
+    padding: 2em;
+    font-size: 1.3rem;
+}
+.modal .form-group {
+    display: flex;
+    margin: 1em;
+}
+
+.modal .form-group  label {
+    margin: 0.5em;
+
+}
+.modal .form-group input:not([type=submit]) {
+    display: block;
+    inline-size: 80%;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    margin: 0.5em 1em;
+    padding: 0.3em;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+.modal .form-group input[type="submit"] {
+    inline-size: 7em;
+    background-color: #d2691e;
+    border: none;
+    border-radius: 1em;
+    color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    
+    margin: 1em 1em 0 auto;
+    padding: 0.7em;
+    cursor: pointer;
+}
