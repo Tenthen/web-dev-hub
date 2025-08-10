@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dropdown-box-mobile-first.css" />
+    <title>Interactive Dropdown</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="heading-container">
+        <h1 class="heading heading--page">Tenthen TechTalk</h1>
+      </div>
+    </header>
+    <nav class="main-menu">
+      <button type="button" class="main-menu__toggle">Open</button>
+      <ul class="main-menu__nav">
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+          <a href="#service" class="dropdown__toggle">Service</a>
+          <ul class="dropdown__nav">
+            <li><a href="#brewers">Brewers</a></li>
+            <li><a href="#food">Food</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#coffee">Coffee</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1 class="heading heading--main">Image Generation</h1>
+      <div class="media">
+        <h4>Ghibli x ChatGPT Trend</h4>
+        <p>
+          3 days ago • Visible to anyone on or off LinkedIn Most people are
+          going crazy over the Ghibli x ChatGPT trend.
+        </p>
+        <div class="media__detail">
+          <p>
+            I tried it myself (you can see😉👇) — typed in a simple prompt, and
+            in under a minute, got an intriguing frame.
+          </p>
+          <p>
+            But when I looked at it closely, it left me with an uncomfortable
+            feeling.
+          </p>
+
+          <p>
+            That contrast hit me. It had all the aesthetics…none of the soul.
+          </p>
+
+          <p>
+            It reminded me of something we learned early at Shaadi.com - People
+            don’t remember how good you looked. They remember what you stood for
+          </p>
+        </div>
+        <div class="media__toggle">
+          <button type="button" class="media-toggle-button">Show More</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let siteNavButton = document.getElementsByClassName('main-menu__toggle')[0];
+      let siteNav = document.getElementsByClassName('main-menu__nav')[0];
+      let siteNavHeight = siteNav.scrollHeight;
+
+      let mediaButton = document.getElementsByClassName('media-toggle-button')[0];
+      let mediaDetail = document.getElementsByClassName('media__detail')[0];
+      let mediaDetailHeight = mediaDetail.scrollHeight;
+
+      let dropdownButton = document.getElementsByClassName('dropdown__toggle')[0];
+      let dropdownMenu = document.getElementsByClassName('dropdown__nav')[0];
+      let dropdownMenuHeight = dropdownMenu.scrollHeight;
+
+      dropdownButton.addEventListener('click', function (event){
+        dropdownMenu.classList.toggle('is-open');
+        if(dropdownMenu.classList.contains('is-open')) {
+          dropdownMenu.style.setProperty('height', dropdownMenuHeight + 'px');
+        }else {
+          dropdownMenu.style.setProperty('height', '0');
+
+        }
+      });
+
+      siteNavButton.addEventListener('click', function (event){
+        siteNav.classList.toggle('is-open');
+        if(siteNav.classList.contains('is-open')) {
+          siteNav.style.setProperty('height', siteNavHeight + 'px');
+        }else {
+          siteNav.style.setProperty('height', '0');
+
+        }
+      })
+
+      mediaButton.addEventListener('click', function (event){
+        mediaDetail.classList.toggle('is-open');
+
+        if(mediaDetail.classList.contains('is-open')) {
+          mediaDetail.style.setProperty('height', mediaDetailHeight + 'px');
+          mediaButton.innerHTML = 'Show Less';
+        }
+        else {
+          mediaDetail.style.setProperty('height', '0');
+          mediaButton.innerHTML = 'Show More';
+
+        }
+      })
+
+    </script>
+  </body>
+</html>
