@@ -1,0 +1,133 @@
+@layer reset, theme, global, layout, modules;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  canvas,
+  figure,
+  img,
+  picture {
+    max-inline-size: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-1: #234d47;
+    --brand-color-2: #008abc;
+    --brand-color-3: #22abdd;
+    --brand-color-4: #207c9e;
+    --border-color-0: #777;
+    --border-color-1: #bbb;
+    --border-color-2: #ccc;
+    --border-color-3: #ddd;
+    --background-color-0: #fff;
+    --background-color-1: #808080;
+    --background-color-2: #2d3447;
+    --foreground-color-0: #000;
+    --foreground-color-1: #39431a;
+    --foreground-color-2: #654;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --gap-size: 1.5em;
+
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-2);
+    line-height: 1.4;
+  }
+  a:where(:any-link) {
+    color: var(--brand-color-2);
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+}
+@layer layout {
+  .container {
+    container: layout / inline-size;
+    padding-inline: 0.5em;
+
+    @media (min-width: 540px) {
+        padding: var(--gap-size);
+    }
+  }
+}
+@layer modules {
+  .heading--page {
+    font-size: 1.5rem;
+  }
+  .media {
+    max-inline-size: clamp(350px, (100vw - 350px) * 0.6 + 350px, 400px);
+    background-color: var(--background-color-2);
+    border-radius: 0.8em;
+    color: var(--background-color-0);
+    margin-inline: auto;
+    padding: var(--gap-size);
+    padding-block-end: 3rem;
+    line-height: 1.6;
+
+    @container layout (min-width: 540px) {
+      max-inline-size: 800px;
+      display: flex;
+      gap: var(--gap-size);
+      padding-block-end: var(--gap-size);
+
+      > .media__image {
+        inline-size: 250px;
+        block-size: 250px;
+      }
+    }
+  }
+  .media__image {
+    border-radius: var(--gap-size);
+    display: block;
+    object-fit: cover;
+  }
+  .media__content > h3 {
+    font-family: var(--font-main-2);
+    font-weight: bold;
+    margin-block: var(--gap-size);
+    
+    @container layout (min-width: 540px) {
+        text-align: left;
+        padding-inline-start: var(--gap-size);
+    }
+  }
+}
