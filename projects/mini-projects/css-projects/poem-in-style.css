@@ -1,0 +1,210 @@
+@layer reset, theme, global, layout, modules;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  canvas,
+  figure,
+  img,
+  picture {
+    max-inline-size: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-0: #8fb8b1;
+    --brand-color-1: #234d47;
+    --brand-color-2: #008abc;
+    --brand-color-3: #22abdd;
+    --brand-color-4: #207c9e;
+    --border-color-0: #777;
+    --border-color-1: #bbb;
+    --border-color-2: #ccc;
+    --border-color-3: #ddd;
+    --background-color-0: #fff;
+    --background-color-1: #808080;
+    --background-color-2: #2d3447;
+    --foreground-color-0: #000;
+    --foreground-color-1: #39431a;
+    --foreground-color-2: #654;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --gap-size: 1.5em;
+
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-2);
+    line-height: 1.4;
+  }
+  a:where(:any-link) {
+    color: var(--brand-color-2);
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+}
+@layer modules {
+  .heading {
+    font-size: 1.5rem;
+    margin-block: var(--gap-size);
+  }
+  .poem {
+    inline-size: clamp(350px, (100vw - 350px) * 0.6 + 350px, 400px);
+    margin-inline: auto;
+    position: relative;
+    background-color: var(--background-color-2);
+    border-radius: var(--gap-size);
+    padding: var(--gap-size);
+    margin-block: var(--gap-size);
+    color: var(--background-color-0);
+
+    h1 {
+      font-family: var(--font-heading-1);
+      font-weight: normal;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--brand-color-3);
+      line-height: 1.3;
+    }
+
+    @media (min-width: 480px) {
+      inline-size: clamp(480px, (100vw - 480px) * 0.6 + 480px, 600px);
+    }
+    @media (min-width: 750px) {
+      inline-size: clamp(750px, (100vw - 750px) * 0.6 + 750px, 850px);
+
+      h1 {
+        font-size: 1.5rem;
+        text-align: left;
+        text-indent: -2em;
+        white-space: nowrap;
+      }
+    }
+  }
+  .poem__image {
+    clip-path: circle(50%);
+    inline-size: 300px;
+    block-size: 300px;
+    margin-inline: auto;
+
+    > img {
+      inline-size: 300px;
+      block-size: 300px;
+      object-fit: cover;
+    }
+
+    @media (min-width: 750px) {
+      float: left;
+      margin-inline-end: 25px;
+      margin-block: var(--gap-size);
+      inline-size: 370px;
+      block-size: 370px;
+      shape-outside: circle(50%);
+
+      > img {
+        inline-size: 370px;
+        block-size: 370px;
+      }
+    }
+  }
+  .content-toggle {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translate(-50%, 0);
+    font-size: 1rem;
+    background-color: var(--background-color-1);
+    color: var(--background-color-0);
+    padding: 0.2em 2em 0.2em 1em;
+    border: 0;
+    border-radius: 0.3em;
+    outline: 0;
+    cursor: pointer;
+
+    @media (min-width: 750px) {
+      display: none;
+    }
+  }
+  .content-toggle::after {
+    position: absolute;
+    content: "";
+    right: 0.4em;
+    top: 0.8em;
+    border: 10px solid var(--background-color-0);
+    border-color: var(--background-color-0) transparent transparent;
+    transition: transform 0.5s linear;
+  }
+  .content-detail.is-open + .content-toggle::after {
+    transform: translateY(-0.75em) rotate(180deg);
+  }
+  .poem__content {
+    line-height: 1.6;
+
+    .content-cite {
+      inline-size: 20em;
+      margin-inline: auto;
+      color: var(--brand-color-3);
+      text-align: end;
+      margin-block-start: -20px;
+
+      @media (min-width: 750px) {
+        inline-size: revert;
+        text-align: left;
+      }
+    }
+  }
+  .content-detail {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+    inline-size: 20em;
+    margin-inline: auto;
+
+    @media (min-width: 750px) {
+      inline-size: revert;
+      height: auto;
+      overflow: visible;
+    }
+  }
+  .content-detail.is-open {
+    height: auto;
+  }
+}
