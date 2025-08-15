@@ -50,6 +50,7 @@
     --font-main-2: Arial, Helvetica, sans-serif;
     --font-heading-1: Georgia, Times, serif;
     --gap-size-extra-large: 3em;
+    --gap-size-larger: 2.5em;
     --gap-size-large: 1.5em;
     --gap-size-medium: 1em;
     --gap-size-small: 0.5em;
@@ -87,12 +88,19 @@
 @layer modules {
   .login-avature {
     position: relative;
-    inline-size: 23em;
+    inline-size: 22em;
     margin-inline: auto;
     margin-block: calc(var(--gap-size-extra-large) * 1.5);
     background-color: var(--foreground-color-0);
     color: var(--background-color-0);
-    padding: calc(var(--gap-size-extra-large) * 1.5) var(--gap-size-extra-large);
+    padding-block: calc(var(--gap-size-extra-large) * 1.5);
+    padding-inline:  var(--gap-size-larger);
+
+    @media (min-width: 480px) {
+      inline-size: 23em;
+      padding: calc(var(--gap-size-extra-large) * 1.5) var(--gap-size-extra-large);
+
+    }
   }
   .image {
     position: absolute;
