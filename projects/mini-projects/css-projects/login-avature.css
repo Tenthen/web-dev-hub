@@ -1,0 +1,181 @@
+@layer reset, theme, global, layout, modules;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  canvas,
+  figure,
+  img,
+  picture {
+    max-inline-size: 100%;
+  }
+  @media (preferes-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-0: #234d47;
+    --brand-color-1: #fb2525;
+    --brand-color-2: #d2691e;
+    --brand-color-3: #389938;
+    --background-color-0: #fff;
+    --background-color-1: #eee;
+    --background-color-2: #808080;
+    --background-color-3: #2d3447;
+    --border-color-1: #ccc;
+    --border-color-2: #bbb;
+    --border-color-3: #777;
+    --foreground-color-0: #000;
+    --foreground-color-1: #39431a;
+    --foreground-color-2: #565656;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --gap-size-extra-large: 3em;
+    --gap-size-large: 1.5em;
+    --gap-size-medium: 1em;
+    --gap-size-small: 0.5em;
+    --gap-size-extra-small: 0.25em;
+
+    accent-color: var(--foreground-color-2);
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-1);
+    line-height: 1.4;
+  }
+  a:where(:any-link) {
+    color: var(--brand-color-0);
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+}
+
+@layer modules {
+  .login-avature {
+    position: relative;
+    inline-size: 23em;
+    margin-inline: auto;
+    margin-block: calc(var(--gap-size-extra-large) * 1.5);
+    background-color: var(--foreground-color-0);
+    color: var(--background-color-0);
+    padding: calc(var(--gap-size-extra-large) * 1.5) var(--gap-size-extra-large);
+  }
+  .image {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    inline-size: 150px;
+    border-radius: 50%;
+  }
+  .heading {
+    font-family: var(--font-main-2);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-block: var(--gap-size-medium);
+  }
+  .button {
+    background-color: var(--brand-color-2);
+    font-size: 1.1rem;
+    border: 0;
+    border-radius: var(--gap-size-large);
+    color: var(--background-color-0);
+    padding-block: 0.7em;
+    padding-inline: var(--gap-size-medium);
+    outline: none;
+    cursor: pointer;
+  }
+  .button--login {
+    flex: 1;
+    transition: 
+      background-color 0.3s ease-out, 
+      scale 0.3s ease-out;
+
+    &:hover,
+    &:focus {
+      background-color: var(--brand-color-1);
+      scale: 1.1;
+    }
+  }
+  .form__group {
+    display: flex;
+    flex-flow: wrap;
+    gap: var(--gap-size-small);
+    margin-block-end: var(--gap-size-large);
+  }
+  .form__group--panel {
+    gap: var(--gap-size-small);
+    label {
+      font-size: 1.2rem;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]) {
+      background-color: transparent;
+      border: 0;
+      border-block-end: 2px solid var(--border-color-2);
+      color: var(--background-color-0);
+      flex: 1;
+      margin-inline-start: var(--gap-size-small);
+      outline: none;
+      padding: var(--gap-size-extra-small) var(--gap-size-medium);
+
+      &:focus {
+        border-color: var(--background-color-0);
+      }
+    }
+  }
+  .form__group--button {
+    padding-block-start: var(--gap-size-medium);
+  }
+  .form__group--setting {
+    justify-content: center;
+    margin-block-end: 0;
+    a {
+      display: inline-block;
+      color: var(--border-color-1);
+      margin-block: var(--gap-size-extra-small);
+      border: 1px solid transparent;
+      transition: border-block-end 0.3s linear;
+
+      &:hover,
+      &:focus {
+        border-block-end: 1px solid var(--background-color-0);
+        color: var(--background-color-0);
+      }
+    }
+  }
+}
