@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-spotify.css">
+    <title>Login Spotify</title>
+</head>
+<body>
+    <div class="spotify">
+        <h1 class="heading heading--logo">Spotify</h1>
+        <h2 class="heading heading--page">Music for everyone</h2>
+        <form action="/login-spotify" method="post" class="form">
+
+            <div class="form-centering">
+                <input type="text" name="username" id="username" placeholder="Email or username">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <div class="check-toggle">
+                    <label for="remind-me">Remember me</label>
+                    <label class="switch">
+                        <input type="checkbox" name="remind-me" id="remind-me" value="remind-me">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <input type="submit" class="button button--login" value="Log In">
+                <div class="thematic-break">
+                    <div class="horizontal-line"></div>
+                    <span class="centered-or">or</span>
+                </div>
+                <a href="/facebook" class="button button--facebook">Log in with facebook</a>
+                <p class="link-container link-container--signup">Don't have an account? <a href="/signup" class="link link--signup">Signup</a></p>
+                <p class="link-container link-container--setting">
+                    <a href="/reset" class="link link--reset">Reset password</a> 
+                    <a href="/settings" class="link link--setting">settings</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
