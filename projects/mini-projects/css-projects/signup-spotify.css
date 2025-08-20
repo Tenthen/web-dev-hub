@@ -1,0 +1,196 @@
+@layer reset, theme, global, layout, modules;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  canvas,
+  figure,
+  img,
+  picture {
+    max-inline-size: 100%;
+  }
+  @media (preferes-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-0: #234d47;
+    --brand-color-1: #fb2525;
+    --brand-color-2: #d2691e;
+    --brand-color-3: #389938;
+    --background-color-0: #fff;
+    --background-color-1: #eee;
+    --background-color-2: #808080;
+    --background-color-3: #2d3447;
+    --border-color-1: #ccc;
+    --border-color-2: #bbb;
+    --border-color-3: #777;
+    --foreground-color-0: #000;
+    --foreground-color-1: #39431a;
+    --foreground-color-2: #565656;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --gap-size-extra-large: 3em;
+    --gap-size-large: 1.5em;
+    --gap-size-medium: 1em;
+    --gap-size-small: 0.5em;
+    --gap-size-extra-small: 0.25em;
+
+    accent-color: var(--foreground-color-2);
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-1);
+    line-height: 1.4;
+  }
+  a:where(:any-link) {
+    color: var(--brand-color-0);
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+}
+@layer modules {
+  .spotify {
+    inline-size: 22rem;
+    margin-inline: auto;
+    margin-block: calc(var(--gap-size-extra-large) * 2)
+      var(--gap-size-extra-large);
+    background-color: var(--foreground-color-0);
+    border-radius: var(--gap-size-large);
+    padding: var(--gap-size-medium) var(--gap-size-medium);
+    color: var(--background-color-0);
+
+    @media (min-width: 480px) {
+      inline-size: 28rem;
+      padding: var(--gap-size-medium) var(--gap-size-extra-large);
+
+    }
+  }
+  .heading {
+    font-family: var(--font-main-1);
+    font-weight: bold;
+    text-transform: none;
+  }
+  .heading--logo {
+    text-indent: -999px;
+    overflow: hidden;
+    padding-block: var(--gap-size-extra-small);
+    background: url(../../../assets/image/Icons/spotify-name-modified.png)
+      no-repeat center top;
+    background-size: 150px;
+
+    @media (min-width: 480px) {
+      background-size: 200px;
+    }
+  }
+  .heading--page {
+    font-size: 1.4rem;
+
+    @media (min-width: 480px) {
+      font-size: 1.7rem;
+    }
+  }
+  .link-group {
+    margin-block: var(--gap-size-large) var(--gap-size-extra-large);
+    display: flex;
+    flex-flow: column;
+    gap: var(--gap-size-large);
+    align-items: center;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      padding: 0.7em var(--gap-size-medium);
+      border-radius: var(--gap-size-extra-large);
+      color: var(--background-color-0);
+      font-size: 1rem;
+      inline-size: 15em;
+      text-transform: uppercase;
+      transition: transform 0.2s linear;
+
+      &:hover, &:focus {
+        transform: scale(1.1);
+      }
+
+      @media (min-width: 480px) {
+        inline-size: 17em;
+        padding: 0.7em var(--gap-size-medium);
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 480px) {
+      gap: 2em;
+    }
+  }
+  a.link-group__signup {
+    background-color: var(--brand-color-3);
+
+    /* &:hover, &:focus {
+        background-color: var(--background-color-0);
+        color: var(--foreground-color-0);
+    } */
+  }
+  a.link-group__login {
+    background-color: var(--background-color-0);
+    color: var(--foreground-color-0);
+
+    /* &:hover, &:focus {
+        background-color: var(--brand-color-3);
+        color: var(--background-color-0);
+    } */
+  }
+  a.link-group__setting {
+    display: block;
+    all: revert;
+    color: var(--background-color-0);
+    margin-block-start: var(--gap-size-small);
+    font-size: 0.9rem;
+    padding: var(--gap-size-small);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border-block-end: 1px solid transparent;
+    transition: border 0.2s linear;
+
+
+    &:hover, &:focus {
+        transform: scale(1);
+        border-block-end-color: var(--background-color-0);
+    }
+  }
+}
