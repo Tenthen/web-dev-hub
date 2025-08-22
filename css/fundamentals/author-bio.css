@@ -19,6 +19,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     /* grid-template-rows: repeat(3, auto); */
     gap: var(--gap-size);
+    justify-items: center;
     max-inline-size: 1080px;
     margin: 5em auto;
     padding: 2em;
@@ -35,6 +36,7 @@ body {
     border-radius: 1em;
     margin-block-start: 5em;
     font-size: 1.1rem;
+    max-inline-size: 450px;
 }
 .card > img {
     position: absolute;
