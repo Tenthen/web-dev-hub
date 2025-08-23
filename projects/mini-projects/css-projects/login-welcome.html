@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-welcome.css">
+    <title>Site Login</title>
+</head>
+<body>
+
+    <div class="welcome">
+        <div class="welcome__inner">
+            <img class="image" src="../../../assets/image/Icons/avature-login.svg" alt="">
+            <h1 class="heading">Login</h1>
+            <form action="/login-welcome" method="post" class="form">
+                <div class="form__group form__group--panel">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username">
+                </div>
+                <div class="form__group form__group--panel">
+                    <label for="password">Password:</label>
+                    <input type="text" name="password" id="password" placeholder="Enter password">
+                </div>
+                <div class="form__group form__group--button">
+                    <input type="submit" class="button" value="Sign In">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
