@@ -1,128 +1,167 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 :root {
-    --topic-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    --brand-color: #d2691e;
+    --header-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --common-font: Verdana, Geneva, Tahoma, sans-serif;
+    --brand-color: #f57d28;
+    --gap-size: 2em;
 }
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #454545;
-    margin: unset;
-    font-size: 1.1em;
-}
-.top-banner {
-    padding: 0.5em;
-    background-color: #ffd698;
-    box-shadow: 0 1px 5px #0000001a;
-}
-.top-banner-inner {
-    inline-size: 80%;
-    max-inline-size: 1000px;
-    margin-inline: auto;
-}
-.open, .modal .close {
-    inline-size: 10em;
-    background-color: #d2691e;
-    padding: 0.6em 1em;
-    border-radius: 1em;
-    margin: 1em;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    color: #fff;
-}
-.container {
-    inline-size: 80%;
-    max-inline-size: 1000px;
-    padding: 1em;
-}
-.container > h1, .modal > .modal-body > h3 {
-    font-family: var(--topic-font);
-    font-weight: normal;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    /* margin-inline: auto; */
-    color: var(--brand-color);
+    font-family: var(--common-font);
+    padding: 2em;
 
 }
-.modal {
-    /* display: none; */
-    position: relative;
-    background-color: #fff;
-    /* position: fixed;
-    top: 3em;
-    right: 10%;
-    left: 10%; */
-    padding: 3em;
+body.no-scroll {
+    overflow: hidden;
+}
+.banner {
+    /* max-inline-size: 80%; */
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #565656;
+}
+.banner .site-header {
+    font-family: var(--header-font);
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #234d47;
+}
+.banner .open-modal-signup, .modal-signup .form-submit {
+    display: inline-block;
+    font-family: var(--common-font);
+    inline-size: 8em;
+    background-color: var(--brand-color);
+    padding: 0.5em 1em;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.open-modal-signup:hover {
+    background-color: #d16314;
+}
+.close-modal-signup {
+    position: absolute;
+    right:  0.5em;
+    top: 0.5em;
+    inline-size: 1em;
+    block-size: 1em;
+    border: none;
+    outline: none;
+    text-indent: 5em;
+    overflow: hidden;
+    font-family: var(--common-font);
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #565656;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
     
 }
-.modal .is-open {
-    display: block;
+.close-modal-signup::after {
+    position: absolute;
+    top: 0.22em;
+    left: 0.08em;
+    line-height: 0.5;
+    text-indent: 0;
+    content: "\00D7";
 }
-.modal .modal-dropbox {
+.close-modal-signup:hover {
+    background-color: #777;
+}
+.modal-dropback {
+    display: none;
+    background-color: #00000080;
     position: fixed;
     inset: 0;
-    background-color: #00000080;
 }
-.modal .close {
-    position: absolute;
-    top: 40px;
-    right: 40px;
-    inline-size: 7em;
-}
-.modal > .modal-body > h3 {
-    font-size: 1.4rem;
-}
-.modal .modal-form {
-    max-inline-size: 600px;
-    margin-inline: auto;
-}
-.modal .modal-form > fieldset {
-    border: 1px solid #bbb;
-    border-radius: 2em;
-    padding-inline: 2em;
-
-}
-.modal .modal-form  legend {
-    padding: 2em;
-    font-size: 1.3rem;
-}
-.modal .form-group {
-    display: flex;
-    margin: 1em;
-}
-
-.modal .form-group  label {
-    margin: 0.5em;
-
-}
-.modal .form-group input:not([type=submit]) {
-    display: block;
-    inline-size: 80%;
-    border: none;
-    border-bottom: 1px solid #bbb;
-    margin: 0.5em 1em;
-    padding: 0.3em;
-    outline: none;
-    font-family: inherit;
-    font-size: inherit;
-}
-.modal .form-group input[type="submit"] {
-    inline-size: 7em;
-    background-color: #d2691e;
-    border: none;
-    border-radius: 1em;
+.modal-signup {
+    display: none;
+    position: fixed;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    max-inline-size: 44em;
+    background-color: #234d47;
     color: #fff;
-    font-family: inherit;
-    font-size: inherit;
-    
-    margin: 1em 1em 0 auto;
-    padding: 0.7em;
-    cursor: pointer;
+    padding: var(--gap-size);
+    border-radius: var(--gap-size);
+
 }
+.is-open {
+    display: block;
+}
+.modal-signup h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    margin-block-end: 1.5em;
+
+}
+.modal-signup p {
+    text-align: center;
+    padding-block-end: var(--gap-size);
+}
+/* .modal-signup > * + * {
+    margin-block-start: var(--gap-size);
+} */
+/* .modal-signup .modal-signup-form {
+    max-inline-size: 70%;
+} */
+
+.modal-signup-form fieldset {
+    border: 1px solid #fff;
+    border-radius: var(--gap-size);
+    padding: 1em 2em;
+}
+.modal-signup-form legend {
+    padding-inline: var(--gap-size);
+    font-size: 1.2em;
+    text-transform: capitalize;
+
+}
+.modal-signup-form .form-group {
+    margin-block: var(--gap-size);
+}
+.modal-signup-form label {
+    display: inline-block;
+    inline-size: 8em;
+    padding-block: 0.5em;
+}
+.modal-signup-form input:not([type="submit"]):not([type="checkbox"]) {
+    min-inline-size: 16em;
+    font-family: var(--common-font);
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: unset;
+    border: none;
+    border-block-end: 1px solid #fff;
+    outline: none;
+    padding: 0.5em 1em;
+}
+.form-submit-container {
+    text-align: end;
+}
+.modal-signup-form .form-submit {    
+    display: inline-block;
+    inline-size: 10em;
+    background-color: var(--brand-color);
+    border-radius: 0.5em;
+    font-family: var(--common-font);
+
+}
+.modal-signup-form .form-submit:hover {
+    background-color: #d16314;
+}
+
+
+

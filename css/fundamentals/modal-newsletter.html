@@ -3,45 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Newsletter Signup</title>
     <link rel="stylesheet" href="modal-newsletter.css" />
-    <title>Modal Newsletter</title>
   </head>
   <body>
-    <header class="top-banner">
-      <div class="top-banner-inner">
-        <p>
-          Find out what's going on at Wombat Coffee each month. Sign up for our
-          newsletter:
-          <button type="button" class="open" id="open">Sign Up</button>
-        </p>
+    <div class="banner">
+      <h1 class="site-header">Wombat coffee roaster</h1>
+      <p>Find out what's going on at Wombat Coffee each month.</p>
+      <p>Sign up for our newsletter:</p>
+      <div>
+        <button class="open-modal-signup" id="open-modal-signup">
+          sign up
+        </button>
       </div>
-    </header>
-    <div class="modal" id="modal" role="dialog" aria-modal="true">
-        <div class="modal-backdrop" id="modal-backdrop"></div>
-        <div class="modal-body">
-            <button type="button" class="close" id="close">Close</button>
-            <h3>Wombat Newsletter</h3>
-            <p>Sign up for our monthly newsletter. No spam. We promise!</p>
-            <form action="/modal_newsletter" method="post" class="modal-form">
-                <fieldset>
-                    <legend>Newsletter</legend>
-                    <div class="form-group">
-                        <label for="form-username">Name</label>
-                        <input type="text" name="username" id="form-username">
-                    </div>
-                    <div class="form-group">
-                        <label for="form-email">Email</label>
-                        <input type="email" name="email" id="form-email">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Send">
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+      <div class="more-content">
+        <h2>
+          ✨ The Invisible Expert: How to Build a Powerful Brand on LinkedIn
+        </h2>
+
+        <p><em>"But no one knows me. How can I grow?"</em></p>
+        <p>
+          You don’t need to be famous. You don’t even need a face. You just need
+          <strong>value + strategy</strong>.
+        </p>
+
+        <hr />
+
+        <h3>🎭 1. Entertain First, Educate Second</h3>
+        <p>
+          People don’t log into LinkedIn to be bored. They come for insights,
+          but they stay for the storytelling.
+        </p>
+        <hr />
+
+        <h3>📢 2. Create Content That Actually Works</h3>
+        <ul>
+          <li>
+            <strong class="strong-upper">HOOK:</strong> A first sentence that
+            <strong class="strong-upper">grabs attention.</strong>
+          </li>
+          <li>
+            <strong class="strong-upper">STORY:</strong> Share your struggle,
+            insight, or lesson.
+          </li>
+        </ul>
+
+        <h3>📈 3. Grow Your Audience (Even as a Nobody)</h3>
+        <ul>
+          <li>
+            <strong>Be active in comments.</strong> Engage on big creators’
+            posts (thoughtful comments, not spam).
+          </li>
+          <li>
+            <strong>Post consistently.</strong> Even
+            <strong>2x per week</strong> is enough.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="container">
-        <h1>Wombat Coffee Roaster</h1>
+    <div class="modal-container">
+      <div class="modal modal-dropback"></div>
+      <div class="modal modal-signup">
+        <h2>Wombat newsletter</h2>
+        <p>Signup for our monthly newsletter. No spam. We promise!</p>
+        <button class="close-modal-signup" id="close-modal-signup">
+          Close
+        </button>
+
+        <form action="/signup-form" method="post" class="modal-signup-form">
+          <fieldset>
+            <legend>newsletter</legend>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="username" id="username" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form-submit-container">
+              <input class="form-submit" type="submit" value="Send" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
     </div>
+    <script>
+      const signupModal = document.getElementsByClassName("modal");
+      const openModal = document.getElementById("open-modal-signup");
+      const closeModal = document.getElementById("close-modal-signup");
+
+      openModal.addEventListener("click", function (event) {
+        signupModal[0].classList.add("is-open");
+        signupModal[1].classList.add("is-open");
+        document.body.classList.add("no-scroll");
+      });
+
+      closeModal.addEventListener("click", function (event) {
+        signupModal[0].classList.remove("is-open");
+        signupModal[1].classList.remove("is-open");
+        document.body.classList.remove("no-scroll");
+      });
+    </script>
   </body>
 </html>
