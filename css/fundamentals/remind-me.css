@@ -42,7 +42,7 @@ input[type="checkbox"] {
     border-radius: 1em;
     cursor: pointer;
 }
-.slider:before {
+.slider::after {
     content: "";
     position: absolute;
     top: 0;
@@ -57,7 +57,7 @@ input[type="checkbox"]:checked + .slider {
     background-color: #008abc;
 }
 
-input[type="checkbox"]:checked + .slider::before {
+input[type="checkbox"]:checked + .slider::after {
     transform: translateX(24px);
 }
 
