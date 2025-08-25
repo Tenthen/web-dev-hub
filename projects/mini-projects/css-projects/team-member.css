@@ -1,107 +1,118 @@
 @layer reset, theme, global, layout, modules;
 @layer reset {
-    *, *::before, *::after {
-        box-sizing: border-box;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  canvas,
+  figure,
+  img,
+  picture {
+    max-inline-size: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms;
     }
-    body {
-        margin: unset;
-    }
-    button, input, select, textarea {
-        font: inherit;
-    }
-    canvas, figure, img, picture {
-        max-inline-size: 100%;
-    }
-    @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            scroll-behavior: auto !important;
-            transition-duration: 0.01ms;
-        }
-    }
+  }
 }
 @layer theme {
-    :root {
-        --brand-color: #39431a;
-        --background-color-0: #fff;
-        --background-color-1: #808080;
-        --foreground-color-0: #000;
-        --foreground-color-1: #654;
-        --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
-        --font-main-2: Arial, Helvetica, sans-serif;
-        --font-heading-1: Georgia, Times, serif;
-        --gap-size-large: 1.5em;
-        --gap-size-medium: 1em;
-        --gap-size-small: .5em;
-        
-    }
+  :root {
+    --brand-color: #39431a;
+    --background-color-0: #fff;
+    --background-color-1: #808080;
+    --foreground-color-0: #000;
+    --foreground-color-1: #654;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --gap-size-large: 1.5em;
+    --gap-size-medium: 1em;
+    --gap-size-small: 0.5em;
+  }
 }
 @layer global {
-    :root {
-        font-size: clamp(1rem, 0.8swv + 0.4em, 1.2rem);
-    }
-    body {
-        font-family: var(--font-main-1);
-        color: var(--foreground-color-1);
-        line-height: 1.6;
-    }
-    a:where(:any-link) {
-        color: var(--brand-color);
-        text-decoration: none;
-    }
-    h1, h2, h3, h4 {
-        font-family: var(--font-heading-1);
-        font-weight: normal;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-        text-align: center;
-    }
+  :root {
+    font-size: clamp(1rem, 0.8swv + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-1);
+    line-height: 1.6;
+  }
+  a:where(:any-link) {
+    color: var(--brand-color);
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
 }
 @layer layout {
-    .content__team {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-        gap: var(--gap-size-large);
-        margin-block: calc(var(--gap-size-large) * 3);
-        padding-inline: var(--gap-size-large);
-    }
+  .content__team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: var(--gap-size-large);
+    margin-block: calc(var(--gap-size-large) * 3);
+    padding-inline: var(--gap-size-large);
+  }
 }
 @layer modules {
-    .heading {
-        font-size: 1.5rem;
-        margin-block: var(--gap-size-large);
-    }
-    .team__member {
-        display: grid;
-        grid-row: span 3;
-        grid-template-rows: subgrid;
-        position: relative;
-        max-inline-size: 23em;
-        margin-inline: auto;
-        background-color: var(--foreground-color-0);
-        border-radius: var(--gap-size-medium);
-        color: var(--background-color-0);
-        margin-block: var(--gap-size-large) calc(var(--gap-size-large) * 2);
-        padding-block: calc(var(--gap-size-large) * 4) var(--gap-size-large);
-        padding-inline: var(--gap-size-large);
+  .heading {
+    font-size: 1.5rem;
+    margin-block: var(--gap-size-large);
+  }
+  .team__member {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    position: relative;
+    max-inline-size: 23em;
+    margin-inline: auto;
+    background-color: var(--foreground-color-0);
+    border-radius: var(--gap-size-medium);
+    color: var(--background-color-0);
+    margin-block: var(--gap-size-large) calc(var(--gap-size-large) * 2);
+    padding-block: calc(var(--gap-size-large) * 4) var(--gap-size-large);
+    padding-inline: var(--gap-size-large);
 
-        > :last-child {
-            text-align: center;
+    > :last-child {
+      text-align: center;
 
-            .position {
-                font-size: 1.2rem;
-                font-weight: bold;
-            }
-        }
-
+      .position {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
     }
-    .member__image {
-        inline-size: 150px;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-    }
+  }
+  .member__image {
+    inline-size: 150px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
 }
