@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="table-forex.css">
+    <title>Forex displaying Table</title>
+</head>
+<body>
+    <div class="forex">
+        <table class="index">
+            <thead>
+                <tr>
+                    <th colspan="2">Market Indicies</th>
+                    <th colspan="2" class="change change--show-all">All Indicies</th>
+                </tr>
+                <tr>
+                    <th colspan="4">
+                        <div class="search">
+                            <input type="search" name="search" id="search" class="search-bar" placeholder="Enter Company name or symbol">
+                            <button type="submit" class="search-button">Search</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>DOW</th>
+                    <td>12189.14</td>
+                    <td class="is-negative change change--depreciating">-152.69</td>
+                    <td class="is-negative">-1.24&percnt;</td>
+                </tr>
+                <tr>
+                    <th>S&amp;P</th>
+                    <td>1305.75</td>
+                    <td class="is-negative change change--depreciating">-13.93</td>
+                    <td class="is-negative">-1.06&percnt;</td>
+                </tr>
+                <tr>
+                    <th>NASDAQ</th>
+                    <td>2731.64</td>
+                    <td class="is-positive change change--appreciating">+33.01</td>
+                    <td class="is-positive">+1.19&percnt;</td>
+                </tr>
+                <tr>
+                    <th>TR US Index</th>
+                    <td>119.44</td>
+                    <td class="is-negative change change--depreciating">-1.47</td>
+                    <td class="is-negative">-1.22&percnt;</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="commodity">
+            <thead>
+                <tr>
+                    <th colspan="2">Commodities</th>
+                    <th colspan="2" class="change change--show-all">All Commodities</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Gold</th>
+                    <td>1496.20</td>
+                    <td class="is-positive change change--appreciating">+10.20</td>
+                    <td class="is-positive">+0.68&percnt;</td>
+                </tr>
+                <tr>
+                    <th>Silver</th>
+                    <td>396.20</td>
+                    <td class="is-positive change change--appreciating">+2.20</td>
+                    <td class="is-positive">+1.18&percnt;</td>
+                </tr>
+                <tr>
+                    <th>Platinum</th>
+                    <td>950.30</td>
+                    <td class="is-positive change change--appreciating">+15.40</td>
+                    <td class="is-positive">+1.65&percnt;</td>
+                </tr>
+                <tr>
+                    <th>Palladium</th>
+                    <td>1250.75</td>
+                    <td class="is-negative change change--depreciating">-8.30</td>
+                    <td class="is-negative">-0.66&percnt;</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="currency">
+            <thead>
+                <tr>
+                    <th colspan="2">Currencies</th>
+                    <th colspan="2" class="change change--show-all">All Currencies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>EUR/USD</th>
+                    <td>1.4234</td>
+                    <td class="is-negative">-1.35&percnt;</td>
+                </tr>
+                <tr>
+                    <th>GPB/USD</th>
+                    <td>1.6262</td>
+                    <td class="is-positive">+0.40&percnt;</td>
+                </tr>
+                <tr>
+                    <th>USD/JPY</th>
+                    <td>82.600</td>
+                    <td class="is-negative">-0.63&percnt;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
