@@ -1,0 +1,53 @@
+body {
+    margin: unset;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #234d47;
+}
+h1 {
+    font-family: Georgia, Times, serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: unset;
+    padding: unset;
+    display: flex;
+    justify-content: space-between;
+}
+ul > li > a {
+    display: block;
+    background-image: url(../../assets/image/Icons/social_media_sprite.png);
+    inline-size: 48px;
+    block-size: 48px;
+}
+.hide {
+    text-indent: 5em;
+    overflow: hidden;
+}
+.instagram {
+    background-position: 0 12.5%;
+}
+.linkedin {
+    background-position: 0 25%;
+}
+.messenger {
+    background-position: 0 37.5%;
+}
+.pinterest {
+    background-position: 0 50%;
+}
+.telegram {
+    background-position: 0 62.5%;
+}
+.twitter {
+    background-position: 0 75%;
+}
+.whatsapp {
+    background-position: 0 87.5%;
+}
+.youtube {
+    background-position: 0 100%;
+}
