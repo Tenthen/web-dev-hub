@@ -1,0 +1,58 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: unset;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+.box {
+    padding: 2em;
+    max-inline-size: 50em;
+    margin-inline: auto;
+    block-size: 60vmin;
+    margin-inline: 2em;
+    margin-block: 3em;
+    background-image: url(../../assets/image/Lambo_aucord.jpg);
+    background-position: center 30%;
+    background-size: cover;
+    border-radius: 1em;
+}
+.box__inner {
+    max-inline-size: 30rem;
+    margin-inline: auto;
+    padding: 1.5rem 2rem 5rem;
+    border-radius: 0.6em;
+    background-color: oklch(100% none none / 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+.box__inner h1 {
+    /* font-family: Georgia, Times, serif; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: #e4e0d8;
+    mix-blend-mode:  hard-light;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+.mask {
+    inline-size: 20em;
+    block-size: 20em;
+    background-image: url(../../assets/image/bird.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    mask-image: url(../../assets/image/Icons/star-mask.png);
+    mask-size: 100% 100%;
+}
+.clipped-contianer {
+    text-align: center;
+    img {
+        inline-size: 20em;
+    }
+}
+.clipped {
+    clip-path: circle(280px);
+    clip-path: polygon(380px 50px, 650px 210px, 520px 500px, 20px 360px);
+
+}
