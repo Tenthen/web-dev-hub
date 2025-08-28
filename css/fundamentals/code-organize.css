@@ -1,0 +1,197 @@
+@layer reset, theme, global, layout, modules, utilities;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  select,
+  input,
+  textarea {
+    font: inherit;
+  }
+  img,
+  picture,
+  canvas,
+  svg {
+    display: block;
+    max-inline-size: 100%;
+    height: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer theme {
+  :root {
+    --brand-color-1: #008abc;
+    --brand-color-2: #0088bb;
+    --background-color-1: #edf3fa;
+    --background-color-2: #c6cdd5;
+    --background-color-footer-1: #2d3447;
+    --background-color-footer-2: #234d47;
+    --foreground-color-1: #39434d;
+    --foreground-color-2: #5a636d;
+    --foreground-color-3: #565;
+    --foreground-color-4: #654;
+    --foreground-color-light: #fff;
+    --font-main-common: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main: Arial, Helvetica, sans-serif;
+    --font-heading: Georgia, "Times New Roman", Times, serif;
+    --gap-size: 1.5em;
+    accent-color: var(--brand-color-1);
+    color-scheme: light;
+  }
+}
+
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8swv + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-common);
+    /* background-color: var(--background-color-1); */
+    /* color: var(--foreground-color-1); */
+  }
+
+  a:any-link {
+    color: var(--brand-color-1);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .main-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+
+  }
+  .main-content h2 {
+    font-size: 1.125rem;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+}
+@layer layout {
+  #homepage {
+    display: grid;
+    grid-template-areas:
+         "header header"
+          "main sidebar"
+          "footer footer";
+    grid-template-columns: minmax(500px, 3fr) minmax(300px, 1fr);
+    gap: 1em;
+  }
+  #homepage .site-header {
+    grid-area: header;
+  }
+  #homepage .main-content {
+    grid-area:  main;
+  }
+  #homepage .sidebar {
+    grid-area: sidebar;
+  }
+  #homepage .site-footer {
+    grid-area:  footer;
+  }
+}
+@layer modules {
+  .site-header .site-logo {
+    text-indent: -99999px;
+    overflow: hidden;
+    background-color: var(--background-color-footer-1);
+    background-image: url(../../assets/image/spotify-name-modified.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: var(--gap-size);
+    margin: unset;
+
+  }
+  .main-menu .site-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    padding: unset;
+
+    list-style-type: none;
+  }
+  .main-menu .site-nav > li > a {
+    all: revert;
+    display: inline-block;
+    font-size: 1.2rem;
+    border-block-end: 2px solid transparent;
+    padding: 0.5em;
+    text-decoration: none;
+    color: var(--brand-color-1);
+    text-transform: capitalize;
+  }
+  .main-menu .site-nav > li > a:hover {
+    border-block-end-color: var(--brand-color-1);
+  }
+  .main-menu .site-nav > li > a:focus {
+    border-block-end-color: var(--brand-color-1);
+  }
+  .main-content {
+    padding-inline-start: 2em;
+    color: var(--foreground-color-1);
+    line-height: 1.6;
+  }
+  .main-content :is(h1, h2, h3) {
+    font-weight: normal;
+    text-transform: capitalize;
+    color: var(--brand-color-1);
+    /* text-align: center; */
+  }
+  .main-content > h1 {
+    font-family: var(--font-heading);
+    /* font-size: 2.5em; */
+    text-shadow: 2px 2px 2px var(--foreground-color-4);
+  }
+  .main-content > h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+
+  }
+  .sidebar {
+    padding-block-start: 3em;
+    padding-inline: 0.5em;
+  }
+  .sidebar .article {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--brand-color-1);
+    line-height: 1.4;
+    border-block-start: 2px dashed var(--foreground-color-4);
+    border-block-end: 2px dotted var(--foreground-color-4);
+    margin-block-end: 2em;
+
+  }
+  .sidebar .article blockquote {
+    margin-inline: 0.3em;
+  }
+  .site-footer {
+    background-color: var(--background-color-footer-1);
+    color: var(--foreground-color-light);
+    text-align: center;
+    padding: 2em;
+  }
+  .site-footer .copy-right {
+    font-size: 0.9rem;
+  }
+}
