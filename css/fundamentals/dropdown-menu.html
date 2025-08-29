@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation with Dropdown Menu</title>
+    <link rel="stylesheet" href="dropdown-menu.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <nav>
+          <ul class="site-nav">
+            <li><a href="#home">home</a></li>
+            <li class="dropdown-container">
+              <a class="toggle-button" id="toggle-button" href="#service"
+                >service</a
+              >
+              <ul class="dropdown-menu" id="dropdown-menu">
+                <li><a href="#brewers">brewers</a></li>
+                <li><a href="#food">food</a></li>
+                <li><a href="#specials">specials</a></li>
+                <li><a href="#coffee">coffee</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">contact</a></li>
+            <li><a href="#about">about</a></li>
+          </ul>
+        </nav>
+        <h1 class="main-heading">DelightBean Restaurant</h1>
+      </header>
+      <main class="main-content">
+        <div class="content-container">
+          <div class="content-show-less">
+            <p>
+              3 days ago • Visible to anyone on or off LinkedIn Most people are
+              going crazy over the Ghibli x ChatGPT trend.
+            </p>
+          </div>
+          <div class="content-show-more" id="content-show-more">
+            <p>
+              I tried it myself (you can see😉👇) — typed in a simple prompt,
+              and in under a minute, got an intriguing frame.
+            </p>
+            <p>
+              But when I looked at it closely, it left me with an uncomfortable
+              feeling.
+            </p>
+            <p>
+              That contrast hit me. It had all the aesthetics…none of the soul.
+            </p>
+            <p>
+              It reminded me of something we learned early at Shaadi.com -
+              People don’t remember how good you looked. They remember what you
+              stood for
+            </p>
+          </div>
+          <div class="show-more-container">
+            <button class="show-toggle-button" id="show-toggle-button">
+              show <span class="less-view" id="less-view">more</span>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      const toggleMenu = document.getElementById("toggle-button");
+      const dropDownMenu = document.getElementById("dropdown-menu");
+
+      const moreContent = document.getElementById("content-show-more");
+      const showToggle = document.getElementById("show-toggle-button");
+      let more;
+
+      showToggle.addEventListener("click", function (event) {
+         more = moreContent.classList.toggle("is-open");
+      });
+      
+      toggleMenu.addEventListener("click", function (event) {
+        dropDownMenu.classList.toggle("is-open");
+      });
+
+      function viewLess(){
+        // if (moreContent.classList.toggle("is-open"))
+            console.log(more);
+      }
+      viewLess();
+
+    </script>
+  </body>
+</html>
