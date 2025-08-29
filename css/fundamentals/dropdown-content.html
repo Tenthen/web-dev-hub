@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Content</title>
+    <link rel="stylesheet" href="dropdown-content.css" />
+  </head>
+  <body>
+    <main class="container">
+      <nav>
+        <div class="dropdown" id="dropdown">
+          <button type="button" class="dropdown-toggle" id="dropdown-toggle">
+            Main Menu
+          </button>
+          <div class="dropdown-menu">
+            <ul class="submenu">
+              <li><a href="/">Home</a></li>
+              <li><a href="/coffees">Coffees</a></li>
+              <li><a href="/brewers">Brewers</a></li>
+              <li><a href="/specials">Specials</a></li>
+              <li><a href="/about">About us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <h1>Wombat Coffee Roasters</h1>
+    </main>
+    <script type="text/javascript">
+      const dropdownToggle = document.getElementById("dropdown-toggle");
+      const dropdown = document.getElementById("dropdown");
+      
+      dropdownToggle.addEventListener("click", function (event) {
+        dropdown.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
