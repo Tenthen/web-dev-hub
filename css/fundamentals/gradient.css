@@ -1,0 +1,108 @@
+:root {
+    --brand-color-1: #2d3447;
+    --background-color-1: #008abc;
+    --background-color-2: #0088bb;
+    --background-color-3: #333333;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: unset;
+    background-color: #ddd;
+}
+/* .fade {
+    inline-size: 15em;
+    block-size: 5em;
+    margin-block-start: 5em;
+    margin-inline: auto;
+    border-radius: 0.5em;
+    background-color: #2d3447;
+    background-image: linear-gradient(to right, var(--brand-color-1), turquoise, var(--background-color-2));
+    background-image: linear-gradient(90deg,
+    turquoise 40%,
+    var(--brand-color-1) 40% 60%,
+    blue 60%);
+    background-image: linear-gradient(to right in oklch longer hue, yellow, blue);
+}
+.progress-bar {
+    inline-size: 20em;
+    block-size: 1em;
+    margin-block-start: 2em;
+    border-radius: 0.5em;
+    background-image: repeating-linear-gradient(-45deg, var(--brand-color-1) 0 10px, var(--background-color-1) 10px 20px);
+} */
+.button {
+    font: inherit;
+    font-size: 1.1rem;
+    margin-block: 2em;
+    /* margin-inline: auto; */
+    margin-inline-start: 2em;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 0.5em;
+    color: #fff;
+    background-image: linear-gradient(to bottom, oklch(57% 0.11 263deg), oklch(40% 0.13 263deg));
+    box-shadow: 0.1em 0.1em 0.3em oklch(26% 0.07 263deg);
+    cursor: pointer;
+}
+.button:active {
+    box-shadow: inset 0 0 0.1em oklch(26% 0.07 263deg),
+                inset 0 0.3em 1em rgb(0 0 0 / 0.4);
+}
+.button--new {
+    background-color: oklch(57% 0.11 263deg);
+    box-shadow: 0 0.4em oklch(40% 0.13 263deg);
+    text-shadow: 1px 1px oklch(40% 0.13 263deg);
+
+}
+.button--new:active {
+    background-color: oklch(53% 0.13 263deg);
+    box-shadow: 0 0.3em oklch(40% 0.13 263deg);
+    transform: translateY(0.1em);
+}
+.blend {
+    min-height: 70vmin;
+    background-image: url(../../assets/image/team1.jpg);
+    background-color: #1a7468;
+    /* background-image: linear-gradient(to right, #1a7468, #1a7468); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: luminosity;
+}
+.texture-blend {
+    min-height: 60vmin;
+    background-image: url(../../assets/image/Homer-artist-opt.jpg), url(../../assets/image/car3.jpg);
+    background-repeat: repeat, no-repeat;
+    background-position: 200px cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+.blend-mix {
+    background-image: url(../../assets/image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 50vmin 0 1em;
+    /* margin-block: 1em; */
+
+}
+.blend-mix h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6rem;
+    background-color: oklch(25% 0.2 25deg);
+    mix-blend-mode: hard-light;
+    color: #808080;
+    text-align: center;
+    border: 0.1em solid #ccc;
+    border-width: 0.1em 0;
+    margin: unset;
+}
+.image {
+    inline-size: 600px;
+    margin-inline: auto;
+    text-align: center;
+}
+.image img {
+    filter: blur(10px);
+}
