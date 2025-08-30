@@ -1,0 +1,141 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --header-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --brand-color: #d2691e;
+    --gap-size: 1.5em;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: unset;
+    background-color: #7fffd4;
+}
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    gap: var(--gap-size);
+}
+.site-header, .primary-nav {
+    grid-column: 1/3;
+    grid-row: span 1;
+}
+.site-header .page-heading {
+    text-align: center;
+    color: #234d47;
+    text-transform: uppercase;
+    margin-block-end: unset;
+}
+.site-nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0.5em;
+    background-color: #234d47;
+
+}
+.site-nav > li a {
+    display: inline-block;
+    background-color: var(--brand-color);
+    padding: 0.6em 1em;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-inline-end: 0.4em;
+    color: #fff;
+    /* text-transform: capitalize; */
+}
+.site-nav .nav-right {
+    margin-inline-start: auto;
+}
+.tile {
+    background-color: #fff;
+    padding: 2em;
+}
+.main-content {
+    /* grid-column: 1 / 2; */
+    grid-row: span 2;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    /* color: #565656; */
+
+}
+.sidebar-top {
+    grid-column: 2 / 3;
+}
+.sidebar-bottom {
+    grid-column: 2 / 3;
+}
+
+.form {
+    background-color: #fff;
+    color: #565656;
+}
+.login h2 {
+    text-align: end;
+    text-transform: uppercase;
+    color: #565656;
+}
+.login .login-group {
+    display: flex;
+    flex-flow: wrap;
+    font-size: 1.1rem;
+    margin-block: 1.2em;
+}
+.login input {
+    flex: 90%;
+    max-inline-size: 21em;
+    padding: 0.5em;
+}
+.login label{
+    margin-block-end: 0.4em;
+    margin-inline-end: 1em;
+}
+.login input[type=submit] {
+    background-color: unset;
+    border: 2px solid chocolate;
+    outline: none;
+    padding: 0.4em 1.1em;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    margin-block-start: 1.5em;
+    inline-size: 8rem;
+}
+.signup {
+    text-align: center;
+    padding-block-start: 4em;
+    font-size: 1.2rem;
+}
+.signup small {
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+.signup .cost {
+    font-family: var(--header-font);
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+}
+.signup .cost-currency {
+    align-self: center;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.signup .cost-dollars {
+    font-size: 4em;
+    display: inline-block;
+    line-height: 0.9;
+}
+.signup .cost-cents {
+    font-size: 1.2em;
+}
+.signup .signup-link {
+    display: inline-block;
+    text-decoration:  none;
+    background-color: #d2691e;
+    color: #fff;
+    padding: 0.8em 1.4em;
+    inline-size: 15em;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
