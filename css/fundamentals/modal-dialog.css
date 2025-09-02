@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+:root {
+    --topic-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --brand-color: #d2691e;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #454545;
+    margin: unset;
+    min-height: 200vh;
+    
+}
+.top-banner {
+    background-color: #ffd698;
+    padding: 0.5em;
+    box-shadow: 0 1px 5px #0000001a;
+}
+.top-banner-inner {
+    inline-size: 80%;
+    max-inline-size: 1000px;
+    margin-inline: auto;
+}
+.open, .close  {
+    display: block;
+    inline-size: 10em;
+    font-family: inherit;
+    font-size: 1.1rem;
+    padding: 0.6em 1em;
+    background-color: #d2691e;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    outline: none;
+    margin: 1em;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: none;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    transform: translate(-50%, -50%);
+    inline-size: 800px;
+    margin-inline: auto;
+    background-color: #333;
+    padding: 2em;
+    color: #fff;
+    border-radius: 3em;
+}
+.modal-backdrop {
+    display: none;
+    position: absolute;
+    inset: 0;
+    /* inline-size: 100%; */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.is-open {
+    display: block;
+}
+
+
+.modal .close {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    inline-size: 8em;
+    margin: unset;
+}
+.modal  form {
+    max-inline-size: 600px;
+}
+.modal  form > fieldset {
+    border: 1px solid #bbb;
+    border-radius: 2em;
+    padding: 1em 2em 2em;
+
+}
+.modal form legend {
+    padding: 2em;
+    font-size: 1.3rem;
+}
+.modal form .form-group {
+    display: flex;
+    justify-content: center;
+}
+.modal form label {
+    inline-size: 8em;
+    margin-inline-start: 2em;
+}
+.modal form input:not([type=submit]) {
+    background-color: #333;
+    inline-size: 18em;
+    border: none;
+    color: inherit;
+    border-bottom: 1px solid #bbb;
+    padding: 0.3em;
+    margin: 0.5em 1em 1.5em 2em;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+}
+.modal form input[type="submit"] {
+    inline-size: 10em;
+    border: none;
+    border-radius: 2em;
+    background-color: var(--brand-color);
+    color: #fff;
+    padding: 0.6em 1em;
+    margin: 1em;
+    float: right;
+    cursor: pointer;
+    font-size: inherit;
+    outline: none;
+}
+
+.modal > .modal-body h2 {
+    font-family: var(--topic-font);
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--brand-color);
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+.container {
+    inline-size: 80%;
+    max-inline-size: 1000px;
+    margin: 1px auto;
+}
+.container > h1 {
+    font-family: var(--topic-font);
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--brand-color);
+    letter-spacing: 0.15em;
+    text-align: center;
+}
+
