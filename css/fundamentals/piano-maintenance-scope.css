@@ -1,0 +1,221 @@
+@layer reset, theme, global, layout, modules, utilities;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+
+  select,
+  input,
+  button,
+  textarea {
+    font: inherit;
+  }
+  img,
+  picture,
+  figure,
+  canvas {
+    max-inline-size: 100%;
+  }
+}
+
+@layer theme {
+  :root {
+    --brand-color: #008abc;
+    --brand-color-2: #0088bb;
+    --background-color-footer-1: #2d3447;
+    --background-color-footer-2: #234d47;
+    --foreground-color-1: #565656;
+    --foreground-color-2: #654;
+    --foreground-color-3: #39434d;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading: Georgia, "Times New Roman", Times, serif;
+    --font-heading-2: Georgia, Times, serif;
+    --gap-size: 1.5em;
+
+    accent-color: var(--foreground-color-1);
+    color-scheme: light;
+  }
+}
+
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8swv + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+  }
+  /* a:hover {
+    color: #0088bb;
+    font-weight: bold;
+  } */
+  :where(.main-content, .sidebar, .footer) h1 {
+    font-size: 2.5rem;
+    @media (min-width: 876px) {
+      font-size: 3rem;
+    }
+  }
+  :where(.main-content, .sidebar, .footer) h2 {
+    font-size: 1.5rem;
+    @media (min-width: 876px) {
+      font-size: 2rem;
+    }
+  }
+  .stack > * + * {
+    margin-block-start: var(--gap-size);
+  }
+}
+@layer layout {
+  #homepage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "main main sidebar"
+      "footer footer footer";
+    gap: var(--gap-size);
+  }
+}
+@layer modules {
+  .site-header h1 {
+    font-family: var(--font-heading-2);
+    text-align: center;
+  }
+  .logo {
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 0.7;
+  }
+  .logo--upper {
+    font-size: 1.3rem;
+  }
+  .logo--middle {
+    font-size: 3.5rem;
+  }
+  .logo--bottom {
+    font-size: 2.2rem;
+  }
+  .menu {
+    list-style-type: none;
+    padding-inline-start: unset;
+
+    > li > a {
+      all: revert;
+      display: block;
+      color: var(--brand-color);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: var(--foreground-color-1);
+        color: #fff;
+      }
+    }
+  }
+  .menu--horizontal {
+    display: flex;
+    justify-content: center;
+  }
+  .menu--vertical > li {
+    border-block-end: 1px solid #ccc;
+
+    a {
+      padding: 0.8em 1.5em;
+    }
+  }
+  .menu--nav {
+    max-inline-size: 80%;
+    margin-inline: auto;
+    border-block-start: 2px solid #000;
+    border-block-end: 1px solid #000;
+
+    > li > a {
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: revert;
+        color: var(--brand-color);
+      }
+    }
+  }
+
+  .dropdown {
+    position: relative;
+  }
+  .dropdown__drawer {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0.5em 0.5em 1em #333;
+    white-space: nowrap;
+  }
+  .is-open {
+    display: block;
+  }
+  .image-container {
+    display: flex;
+    max-inline-size: 90%;
+    margin-inline: auto;
+    gap: 0.15em;
+  }
+  .main-content {
+    padding: var(--gap-size);
+    line-height: 1.6;
+    color: var(--foreground-color-3);
+  }
+  .heading {
+    font-family: var(--font-heading-2);
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--background-color-footer-2);
+  }
+  .heading--1 {
+    text-align: center;
+    margin-block-end: unset;
+  }
+  .heading--2 {
+    margin-block-start: unset;
+  }
+
+  @scope (.media) {
+    :scope {
+      display: flex;
+      /* flex-flow: wrap; */
+      max-inline-size: 50em;
+      margin-inline: auto;
+      padding: 1.5em;
+      background-color: #2d3447;
+      color: white;
+      border-radius: 0.5em;
+      gap: 1.5em;
+    }
+    :scope.right {
+      flex-direction: row-reverse;
+    }
+    .image {
+      display: flex;
+      flex-flow: column;
+    }
+    .image > img {
+      flex: 1;
+      object-fit: cover;
+    }
+    .body {
+      margin-block-start: 0;
+    }
+    .body > h2 {
+      margin-block-start: 0;
+    }
+  }
+}
