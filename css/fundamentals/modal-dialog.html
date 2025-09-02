@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="modal-dialog.css" />
+    <title>Modal Dialog</title>
+  </head>
+  <body>
+    <header class="top-banner">
+      <div class="top-banner-inner">
+        <p>
+          Find out what's going on at Wombat Coffee each month. Sign up for our
+          newsletter:
+          <button class="open" id="open" type="button">Sign Up</button>
+        </p>
+      </div>
+    </header>
+    <div id="modal" role="dialog" aria-modal="true">
+      <div class="modal modal-backdrop"></div>
+      <div class="modal modal-body">
+        <button type="button" class="close" id="close">close</button>
+        <h2>Wombat newsletter</h2>
+        <p>Sign up for our monthly newsletter. No spam. We promise!</p>
+
+        <form action="/newsletter-signup" method="post">
+          <fieldset>
+            <legend>Newsletter</legend>
+            <div class="form-group">
+              <label for="username-form">Name</label>
+              <input type="text" name="username" id="username-form" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div><input type="submit" value="Send" /></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <main class="container">
+      <h1>Wombat Coffee Roaster</h1>
+    </main>
+    <script>
+      const modalPopup = document.getElementsByClassName("modal")
+      const openButton = document.getElementById("open");
+      const closeButton = document.getElementById("close");
+      // const modal = document.getElementById("modal");
+
+      openButton.addEventListener("click", function (event) {
+        modalPopup[0].classList.add("is-open");
+        modalPopup[1].classList.add("is-open");
+      });
+
+      closeButton.addEventListener("click", function (event) {
+        modalPopup[0].classList.remove("is-open");
+        modalPopup[1].classList.remove("is-open");
+
+      });
+    </script>
+  </body>
+</html>
