@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Analog Specialists</title>
+    <link rel="stylesheet" href="piano-maintenance-scope.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>
+        <span class="logo logo--upper">the</span> <br />
+        <span class="logo logo--middle">analog</span> <br />
+        <span class="logo logo--bottom">specialists</span>
+      </h1>
+    </header>
+    <nav class="main-menu">
+      <ul class="site-nav menu menu--horizontal menu--nav">
+        <li><a class="on" href="#home">home</a></li>
+        <li class="dropdown">
+          <a class="dropdown__toggle" id="dropdown-toggle" href="#for sale"
+            >for sale</a
+          >
+          <div class="dropdown__drawer" id="dropdown-drawer">
+            <ul class="menu menu--vertical">
+              <li><a href="#luxary">luxary</a></li>
+              <li><a href="#second hand">second hand</a></li>
+              <li><a href="#normal">normal</a></li>
+              <li><a href="#sport cars">sport cars</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#repairs">repairs</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+    <main class="main-content stack">
+      <div class="image-container">
+        <div class="image">
+          <img src="../../assets/image/car1.jpg" alt="Car" />
+        </div>
+        <div><img src="../../assets/image/car2.jpg" alt="Car" /></div>
+        <div class="image">
+          <img src="../../assets/image/car3.jpg" alt="Car" />
+        </div>
+      </div>
+      <div class="main-content__description">
+        <h1 class="heading heading--1">service</h1>
+        <h2 class="heading heading--2">special</h2>
+        <p>
+          We specialise in the sales and repairs of classic keyboards, in
+          particular the Fender Rhodes, wurlitier EP200, and Hohner Clavinet.
+        </p>
+      </div>
+      <div class="media">
+        <div class="media__image">
+          <img src="../../assets/image/G-wagon_batuh.jpg" alt="" />
+        </div>
+        <div class="media__body">
+          <h4>G-wagon Batuh</h4>
+          <p>
+            This Laxurious car is manufactured by the European company that is
+            located in Germany Mercedes. Its price is above $400,000.00, which
+            makes it as a sign of riches and power.
+          </p>
+        </div>
+      </div>
+      <div class="media media--right">
+        <div class="media__image">
+          <img
+            src="../../assets/image/BodyBuilder.jpg"
+            alt="Silhouette of a person running"
+          />
+        </div>
+        <div class="media__body">
+          <h4>Strength</h4>
+          <p>
+            Title subelement Strength training is an important part of injury
+            prevention. Focus on your core&mdash; especially your abs and
+            glutes.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const toggleDropdown = document.getElementById("dropdown-toggle");
+      let dropdown1 = document.getElementById("dropdown-drawer");
+
+      toggleDropdown.addEventListener("click", function (event) {
+        let dropdown = event.target.parentNode;
+        dropdown1.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
