@@ -1,0 +1,96 @@
+@layer reset, theme, global, modules;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  canvas,
+  img,
+  picture,
+  figure {
+    max-inline-size: 100%;
+  }
+}
+@layer theme {
+    :root {
+        --brand-color-1: #234d47;
+        --brand-color-2: #8fb8b1;
+
+        --background-color-1: #f9f9f9;
+        --background-color-2: #808080;
+        --background-color-footer: #2d3447;
+        --foreground-color-0: #fff;
+        --foreground-color-1: #654;
+        --foreground-color-2: #565656;
+        --foreground-color-3: #39431a;
+        --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+        --font-main-2: Arial, Helvetica, sans-serif;
+        --font-heading-1: Georgia, 'Times New Roman', Times, serif;
+        --gap-size: 2em;
+        --shape-gradient: linear-gradient(65deg, #000 0 375px, transparent 375px);
+
+        accent-color: var(--foreground-color-1);
+        color-scheme: light;
+    }
+}
+@layer global {
+    :root {
+        font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+    }
+    body {
+        font-family: var(--font-main-1);
+        color: var(--foreground-color-3);
+        line-height: 1.4;
+    }
+    a:where(:any-link){
+        color: var(--brand-color-1);
+        text-decoration: none;
+    }
+}
+@layer modules {
+    .poem {
+        inline-size: 850px;
+        margin-inline: auto;
+        margin-block-start: var(--gap-size);
+        padding: 1em var(--gap-size);
+        background-color: var(--background-color-footer);
+        border-radius: var(--gap-size);
+        color: var(--foreground-color-0);
+        line-height: 1.6;
+
+        > h1 {
+            font-family: var(--font-heading-1);
+            font-size: 1.5rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            color: var(--brand-color-2);
+            text-align: center;
+            margin-block: unset;
+        }
+    }
+    .poem__image {
+        float: left;
+        shape-margin: 15px;
+        margin-block-start: var(--gap-size);
+        mask: var(--shape-gradient);
+        shape-outside: var(--shape-gradient);
+
+        > img {
+            display: block;
+            block-size: 400px;
+            object-position: -100px 0;
+
+        }
+    }
+    .poem_para {
+        > cite {
+            font-style: italic;
+            color: var(--brand-color-2);
+        }
+    }
+}
