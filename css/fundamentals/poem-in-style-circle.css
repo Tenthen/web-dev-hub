@@ -1,0 +1,110 @@
+@layer reset, theme, global, layout, modules, utilities;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  select,
+  input,
+  textarea,
+  button {
+    font: inherit;
+  }
+  canvas,
+  img,
+  picture,
+  figure {
+    max-inline-size: 100%;
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-1: #234d47;
+    --brand-color-2: #8fb8b1;
+    --background-color-1: #f9f9f9;
+    --background-color-2: #808080;
+    --background-color-3: #2d3447;
+    --foreground-color-1: #565656;
+    --foreground-color-2: #654;
+    --foreground-color-3: #39431a;
+    --foreground-color-4: #fff;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, "Times New Roman", Times, serif;
+
+    --gap-size: 2em;
+    --shape: circle(50%);
+    accent-color: var(--foreground-color-1);
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8swv + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-3);
+    line-height: 1.4;
+  }
+  a:where(:anylink) {
+    color: var(--brand-color-1);
+    text-decoration: none;
+  }
+}
+
+@layer layout {
+  .l-layout {
+    display: grid;
+  }
+}
+@layer module {
+  .poem {
+    inline-size: 830px;
+    margin-inline: auto;
+    background-color: var(--background-color-3);
+    border-radius: var(--gap-size);
+    margin-block: var(--gap-size);
+    padding: 1em var(--gap-size);
+    color: var(--foreground-color-4);
+    line-height: 1.5;
+
+    h1 {
+      font-family: var(--font-heading-1);
+      font-size: 1.5rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      color: var(--brand-color-2);
+      text-align: center;
+    }
+  }
+
+  .poem__image {
+    float: left;
+    margin-inline-end: 15px;
+    margin-block-start: 16px;
+    clip-path: var(--shape);
+    shape-outside: var(--shape);
+
+    > img {
+      display: block;
+      inline-size: 400px;
+      block-size: 400px;
+      object-fit: cover;
+    }
+  }
+
+  .poem__para {
+    white-space: pre;
+    margin-block-start: -40px;
+
+    > cite {
+      color: var(--brand-color-2);
+      font-style: italic;
+    }
+  }
+}
