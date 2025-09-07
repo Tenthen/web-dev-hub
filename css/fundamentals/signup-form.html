@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup-form.css" />
+    <title>Signup Form</title>
+  </head>
+  <body>
+    <h1 class="heading">Signup for Extra Explore</h1>
+    <div class="form-container">
+
+      <form action="/signup-form" class="form">
+
+        <section class="form-part part-one">
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="form__group">
+              <label for="firstname">FirstName:</label>
+              <input type="text" name="firstname" id="firstname" />
+            </div>
+            <div class="form__group">
+              <label for="lastname">LastName:</label>
+              <input type="text" name="lastname" id="lastname" />
+            </div>
+            <input type="button" class="next-button" value="Next" />
+          </fieldset>
+        </section>
+
+        <section class="form-part part-two">
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="form__group">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form__group">
+              <label for="address">Address:</label>
+              <input type="text" name="address" id="address" />
+            </div>
+            <div class="form__button-wrapper">
+                <input type="button" class="back-button" value="Back" />
+                <input type="button" class="next-button" value="Next" />
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="form-part part-one">
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="form__group">
+              <label for="firstname">FirstName:</label>
+              <input type="text" name="firstname" id="firstname" />
+            </div>
+            <div class="form__group">
+              <label for="lastname">LastName:</label>
+              <input type="text" name="lastname" id="lastname" />
+            </div>
+            <div class="form__button-wrapper">
+                <input type="button" class="back-button" value="Back" />
+                <input type="button" class="next-button" value="Next" />
+            </div>
+          </fieldset>
+        </section>
+
+        <section class="form-part part-two">
+          <fieldset>
+            <legend>Personal details</legend>
+            <div class="form__group">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form__group">
+              <label for="address">Address:</label>
+              <input type="text" name="address" id="address" />
+            </div>
+            <div class="form__button-wrapper">
+                <input type="button" class="back-button" value="Back" />
+                <input type="submit" value="Submit" />
+            </div>
+          </fieldset>
+        </section>
+      </form>
+    </div>
+    <script>
+      let nextButtons = document.getElementsByClassName('next-button');
+      let backButtons = document.getElementsByClassName('back-button');
+      let formSections = document.getElementsByClassName('form-part');
+
+      for (let i = 0; i < nextButtons.length; i++) {
+        nextButtons[i].addEventListener('click', function (event) {
+          formSections[i].classList.add('is-close');
+          formSections[i + 1].classList.add('is-open');
+          if(formSections[i].classList.contains('is-open')) {
+            formSections[i].classList.remove('is-open');
+          }
+        });
+        let j = i + 1;
+        backButtons[i].addEventListener('click', function(event){
+            formSections[j].classList.remove('is-open');
+            formSections[j - 1].classList.add('is-open');
+            if(formSections[j - 1].classList.contains('is-close')){
+              formSections[j - 1].classList.remove('is-close');
+            }
+
+        })
+      }
+    </script>
+  </body>
+</html>
