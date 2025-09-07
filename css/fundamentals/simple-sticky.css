@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+:root {
+     --toppic-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     --brand-color: #234d47;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #454645;
+    margin: unset;
+}
+.container{
+    display: flex;
+    flex-flow: wrap;
+}
+.main-header {
+    flex: 100%;
+}
+.site-nav {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    list-style-type: none;
+    padding-block: 1em;
+}
+.site-nav > li > a {
+    display: block;
+    font-family: inherit;
+    padding: 0.3em 1em;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+
+}
+.site-nav > li > a:hover {
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+.site-nav > li > a:focus {
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+.main-header > h1 {
+    font-family: var(--toppic-font);
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--brand-color);
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+.main-content {
+    flex: 1 70%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding-inline: 3em;
+    padding-block: 0.5em;
+}
+.sidebar {
+    flex: 30%;
+}
+.sidebar section {
+    padding: 1em;
+    min-block-size: 100vh;
+}
+.popular-recipes h2 {
+    font-family: var(--toppic-font);
+    /* font-size: 1.6rem; */
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--brand-color);
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+.popular-recipes .secondary-nav {
+    position: sticky;
+    top: 1.2em;
+    list-style-type: none;
+    padding-inline-start: unset;
+}
+.secondary-nav > li > a {
+    display: inline-block;
+    text-decoration: none;
+    color: #234d47;
+    font-size: 1.1rem;
+    padding: 0.5em;
+    background-color: #f4ecf5;
+    margin-block-end: 0.2em;
+}
+.secondary-nav a:hover {
+    background-color: #decde0;
+}
