@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wombat Coffee House</title>
+    <link rel="stylesheet" href="wombat-coffee-house.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="title">
+        <h1>Wombat Coffee House</h1>
+        <div class="slogan">We love coffee</div>
+      </div>
+    </header>
+    <nav class="main-nav">
+      <button class="menu-toggle" id="menu-toggle">menu toggle</button>
+      <div class="menu-dropdown" id="menu-dropdown">
+        <ul class="menu-nav">
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#shop">shop</a></li>
+          <li><a href="#brew">brew</a></li>
+          <li><a href="#menu">menu</a></li>
+        </ul>
+      </div>
+    </nav>
+    <aside class="hero">
+      <p>
+        Welcome to Wombat Coffee Roasters! We are passionate about our craft,
+        striving to bring you the best hand-crafted coffee in the city.
+      </p>
+    </aside>
+    <main class="main-content">
+      <section class="column">
+        <h2 class="subtitle">Single-Origin</h2>
+        <p>
+          We have built partnerships with small farms around the world to
+          hand-select beans at the peak of season. We then carefully roast in
+          <a href="#">small batches</a> to maximize their potential.
+        </p>
+      </section>
+      <section class="column">
+        <h2 class="subtitle">Blends</h2>
+        <p>
+          Our tasters have put together a selection of carefully balanced
+          blends. Our famous <a href="#">house blend</a> is available year round.
+        </p>
+      </section>
+      <section class="column">
+        <h2 class="subtitle">Brewing Equipment</h2>
+        <p>
+          We offer our favorite kettles, French presses, and pour-over cones.
+          Come to one of our <a href="#">brewing classes</a> to learn how to brew the perfect
+          pour-over cup.
+        </p>
+      </section>
+    </main>
+    <script>
+        const toggleMenu = document.getElementById('menu-toggle');
+        const dropdownMenu = document.getElementById('menu-dropdown');
+
+        toggleMenu.addEventListener('click', function (event){
+            dropdownMenu.classList.toggle('is-open');
+        })
+    </script>
+  </body>
+</html>
