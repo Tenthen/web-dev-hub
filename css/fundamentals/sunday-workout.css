@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+    --header-font: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --brand-color: #d2691e;
+    --gap-size: 1.5em;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #07f1f1;
+    margin: initial;
+}
+.container {
+    display: flex;
+    flex-flow: wrap;
+    gap: var(--gap-size);
+}
+.site-header {
+    flex: 100%;
+}
+.site-header h1 {
+    font-family: var(--header-font);
+    text-align: center;
+    text-transform: uppercase;
+    color: #234d47;
+}
+.site-nav ul {
+    background-color: #234d47;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: calc(var(--gap-size) - .5em);
+    list-style-type: none;
+    padding: 0.6em;
+}
+.site-nav > ul a {
+    display: block;
+    padding: 0.6em 1em;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background-color: var(--brand-color);
+    color: #fff;
+    text-transform: capitalize; 
+    border-radius: 0.3em;
+}
+.site-nav .about {
+    margin-inline-start: auto;
+}
+
+.main-content {
+    flex: 5 1 60%;
+    background-color: #fff;
+    padding: 2em;
+    margin-inline-start: 1.5em;
+    line-height: 1.6;
+}
+.side-bar {
+    flex:  0.3 1 25%;
+    display: flex;
+    flex-flow: column;
+    gap: var(--gap-size);
+}
+.form {
+    min-inline-size: 18em;
+    flex: 1 1 auto;
+    background-color: #fff;
+    padding: 2em;
+    color: #565656;
+    /* margin-inline-start: var(--gap-size); */
+}
+.login h2 {
+    text-align: end;
+    text-transform: uppercase;
+    color: #565656;
+}
+.login .login-group {
+    display: flex;
+    flex-flow: wrap;
+    font-size: 1.1rem;
+    margin-block: 1.2em;
+}
+.login input {
+    flex: 90%;
+    max-inline-size: 21em;
+    padding: 0.5em;
+    /* border: 1px solid #bbb; */
+    /* margin-inline: auto; */
+}
+.login label{
+    margin-block-end: 0.4em;
+    margin-inline-end: 1em;
+}
+.login input[type=submit] {
+    background-color: unset;
+    border: 2px solid chocolate;
+    outline: none;
+    padding: 0.4em 1.1em;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    margin-block-start: 1.5em;
+    inline-size: 8rem;
+}
+.signup {
+    text-align: center;
+    padding-block-start: 4em;
+    font-size: 1.2rem;
+}
+.signup small {
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+.signup .cost {
+    font-family: var(--header-font);
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    margin-block-start: 0.4em;
+}
+.signup .cost-currency {
+    align-self: center;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.signup .cost-dollars {
+    font-size: 4em;
+    display: inline-block;
+    margin-block-end: -0.6em;
+    /* line-height: 1em; */
+}
+.signup .cost-cents {
+    font-size: 1.2em;
+}
+.signup .signup-link {
+    display: inline-block;
+    text-decoration:  none;
+    background-color: #d2691e;
+    color: #fff;
+    padding: 0.8em 1.4em;
+    inline-size: 15em;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin-block-start: 0.4em;
+}
