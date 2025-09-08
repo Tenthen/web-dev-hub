@@ -1,0 +1,114 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root{
+    font-size: clamp(0.9rem, 0.5swv + 0.6em, 1.125rem);
+    --gap-size: 1.5em;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: unset;
+}
+.header {
+    position: relative;
+    background-color: #008abc;
+    font-size: 1.1rem;
+    color: #fff;
+    padding: 0.4em 1em;
+}
+.header h1 {
+    text-transform: uppercase;
+    margin-block: 0.2em;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+.header .slogan {
+    font-size: 0.875rem;
+    margin: unset;
+}
+a:link {
+    text-decoration: none;
+    color: #1476b8;
+    font-weight: bold;
+}
+a:visited {
+    color: #143068;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: #b81414;
+}
+.main-menu {
+    position: relative;
+}
+.main-menu .menu-toggle {
+    position: absolute;
+    top: -1.2em;
+    right: 0.1em;
+    border: none;
+    background-color: transparent;
+
+    inline-size: 1em;
+    block-size: 1em;
+    font-size: 3em;
+    line-height: 0.4;
+    text-indent: 5em;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+.main-menu .menu-toggle::after {
+    position: absolute;
+    top: 0.2em;
+    left: 0.1em;
+
+    display: block;
+    content: "\2261";
+    text-indent: 0;
+}
+.main-menu .menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: unset;
+}
+.main-menu .menu-dropdown.is-open {
+    display: block;
+}
+.main-menu .menu-nav {
+    list-style-type: none;
+    padding-inline-start: unset;
+    background-color: #eece8b;
+    margin: unset;
+}
+.main-menu .menu-nav > li + li {
+    border-top: 1px solid #e9e7e3;
+}
+.main-menu .menu-nav > li > a {
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    padding-block: 0.8em;
+}
+.sidebar.hero {
+    padding: 2em 1em;
+    text-align: center;
+    background-image: url(../../assets/image/caffeine-cloud.jpg);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-shadow: 0.2em 0.2em 0.4em #000;
+}
+
+.main-content {
+    padding: 1em;
+}
+.main-content .subtitle {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin-block: var(--gap-size);
+}
