@@ -1,0 +1,65 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --font-header: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --gap-size: 1.5em;
+    font-size: clamp(0.9rem, 0.5swv + 0.6em, 1.125rem);
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: unset;
+}
+.header {
+    background-color: #008abc;
+    padding: var(--gap-size);
+    color: #fff;
+    font-size: 1.1rem;
+    
+}
+.header h1 {
+    /* font-family: var(--font-header); */
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-block: unset;
+}
+.header .slogan {
+    font-size: 0.875em;
+    color: #fff;
+    margin: unset;
+}
+a:link {
+    text-decoration: none;
+    color: #1476b8;
+    font-weight: bold;
+}
+a:visited {
+    color: #1430b8;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: #b81414;
+}
+.hero {
+    padding: 2em 1em;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    background-image: url(../../assets/image/caffeine-cloud.jpg);
+    background-size: 100%;
+    text-shadow: 0.2em 0.2em 0.4em #000;
+    
+}
+.main {
+    padding: 1em;
+}
+.main .subtitle {
+    font-size: 0.875em;
+    text-transform: uppercase;
+    margin-block: var(--gap-size);
+}
+
