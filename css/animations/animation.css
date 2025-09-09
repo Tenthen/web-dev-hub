@@ -1,0 +1,123 @@
+@layer reset, theme, global, layout, medules, utilities;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  select,
+  input,
+  textarea,
+  button {
+    font: inherit;
+  }
+  canvas,
+  img,
+  picture,
+  figure {
+    max-inline-size: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-1: #234d47;
+    --accent-yellow: oklch(87% 0.13 83deg);
+    --background-color-0: #fff;
+    --background-color-1: #f9f9f9;
+    --background-color-2: #808080;
+    --background-color-3: #2d3447;
+    --background-color-31: #2d344799;
+    --background-color-4: oklch(40% 0.1 238deg);
+    --background-color-5: oklch(32% 0.08 238deg);
+    --border-color-1: #bbb;
+    --border-color-2: #ccc;
+    --border-color-3: #777;
+    --foreground-color-0: #000;
+    --foreground-color-01: #00000099;
+    --foreground-color-1: #654;
+    --foreground-color-2: #565656;
+    --foreground-color-3: #39431a;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --font-heading-2: Georgia, "Times New Roman", Times, serif;
+    --gap-size: 1.5em;
+
+    accent-color: var(--foreground-color-1);
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    min-block-size: 100dsv;
+    background-color: var(--background-color-4);
+    background-image: radial-gradient(
+      var(--background-color-4),
+      var(--background-color-5)
+    );
+    color: var(--background-color-0);
+    line-height: 1.4;
+  }
+  a:where(:any-link) {
+    color: var(--brand-color-1);
+    text-decoration: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    /* color: var(--brand-color-1); */
+    color: var(--background-color-0);
+    text-align: center;
+  }
+}
+@layer layout {
+  .l-homepage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gap-size);
+  }
+}
+@layer modules {
+    @keyframes over-and-back {
+        0% {
+            background-color: var(--background-color-3);
+            transform: translate(0);
+        }
+        50% {
+            background-color: #008abc;
+            transform: translate(50px);
+        }
+        100% {
+            background-color: #d2691e;
+            transform: translate(0);
+        }
+    }
+    .box {
+        inline-size: 10em;
+        block-size: 8em;
+        background-color: var(--foreground-color-0);
+        animation: over-and-back 1.5s linear 3;
+    }
+}
