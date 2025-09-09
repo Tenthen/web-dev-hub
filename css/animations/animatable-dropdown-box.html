@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="animatable-dropdown-box.css" />
+    <title>Dropdown box with anmation</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="main-nav">
+        <ul class="site-nav">
+          <li><a href="#home">Home</a></li>
+          <li class="dropdown">
+            <a href="#service" class="dropdown__toggle">Service</a>
+            <ul class="dropdown__drawer">
+              <li><a href="#brewers">Brewers</a></li>
+              <li><a href="#food">Food</a></li>
+              <li><a href="#specials">Specials</a></li>
+              <li><a href="#coffee">Coffee</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+      <h1 class="main-heading">DelightBean Restaurant</h1>
+    </header>
+    <main class="main-content">
+      <div class="media">
+        <div class="media__show-less">
+          <p>
+            3 days ago • Visible to anyone on or off LinkedIn Most people are
+            going crazy over the Ghibli x ChatGPT trend.
+          </p>
+        </div>
+        <div class="media__show-more">
+          <p>
+            I tried it myself (you can see😉👇) — typed in a simple prompt, and
+            in under a minute, got an intriguing frame.
+          </p>
+          <p>
+            But when I looked at it closely, it left me with an uncomfortable
+            feeling.
+          </p>
+          <p>
+            That contrast hit me. It had all the aesthetics…none of the soul.
+          </p>
+          <p>
+            It reminded me of something we learned early at Shaadi.com - People
+            don’t remember how good you looked. They remember what you stood for
+          </p>
+        </div>
+        <div class="media__show-toggle">
+            <button class="toggle-button" type="button">Show more</button>
+        </div>
+      </div>
+
+      <script>
+        let toggleMenu = document.getElementsByClassName('dropdown__toggle')[0];
+        let dropdownMenu = document.getElementsByClassName('dropdown__drawer')[0];
+
+        let toggleMedia = document.getElementsByClassName('toggle-button')[0];
+        let mediaMore = document.getElementsByClassName('media__show-more')[0];
+        let mediaHeight = mediaMore.scrollHeight;
+
+        toggleMenu.addEventListener('click', function (event) {
+            dropdownMenu.classList.toggle('is-open');
+        })
+
+        toggleMedia.addEventListener('click', function (event){
+            mediaMore.classList.toggle('is-open');
+
+            if(mediaMore.classList.contains('is-open')){
+                mediaMore.style.setProperty('height', mediaHeight + 'px');
+                toggleMedia.innerHTML = 'Show Less';
+            }else {
+                mediaMore.style.setProperty('height', '0');
+                toggleMedia.innerHTML = 'Show More';
+
+            }
+        })
+
+      </script>
+    </main>
+  </body>
+</html>
