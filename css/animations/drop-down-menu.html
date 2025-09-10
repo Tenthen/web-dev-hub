@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="drop-down-menu.css" />
+    <title>Drop Down Menu with transition</title>
+  </head>
+  <body>
+    <div class="drop-down">
+      <button class="drop-down__toggle-button" id="toggle-button">Menu</button>
+      <div class="drop-down__menu" id="drop-down-menu">
+        <ul class="menu-nav">
+          <li>Features</li>
+          <li>Pricing</li>
+          <li>Support</li>
+          <li>About</li>
+        </ul>
+      </div>
+    </div>
+    <div class="read-more">
+        <a href="/more">Read more</a>
+    </div>
+
+    <div class="dropdown" aria-haspopup="true">
+      <button class="dropdown__toggle" type="button">Menu</button>
+      <div class="dropdown__drawer" >
+        <ul class="menu" role="menu">
+          <li role="menuitem">
+            <a href="/features">Features</a>
+          </li>
+          <li role="menuitem">
+            <a href="/pricing">Pricing</a>
+          </li>
+          <li role="menuitem">
+            <a href="/support">Support</a>
+          </li>
+          <li role="menuitem">
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const dropDownMenu = document.getElementById('drop-down-menu');
+
+        toggleButton.addEventListener('click', function (event){
+            dropDownMenu.classList.toggle('is-open');
+        })
+
+        let toggleMenu = document.getElementsByClassName('dropdown__toggle')[0];
+        let dropdown = toggleMenu.parentElement;
+        let drawer = document.getElementsByClassName('dropdown__drawer')[0];
+        let height = drawer.scrollHeight;
+
+
+        toggleMenu.addEventListener('click', function (event) {
+          dropdown.classList.toggle('is-open');
+          if(dropdown.classList.contains('is-open')){
+            drawer.style.setProperty('height', height + 'px');
+          }else {
+            drawer.style.setProperty('height', "0");
+          }
+        })
+    </script>
+  </body>
+</html>
