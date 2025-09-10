@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="save-button.css" />
+    <title>Self Reminder</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 class="page-heading">Responding to user interaction</h1>
+    </header>
+
+    <main class="main-content">
+      <section class="description">
+        <h3>Spinning indication</h3>
+        <p>
+          Spinning indicator to let the user know that the form is posting and
+          the browser is awaiting a response from the server. You can check it by
+          clicking the save button. click again to undo.
+        </p>
+        <h3>The Shake Animation</h3>
+        <p>
+          Drawing the user attention to save thier work, by the time they
+          finished their typing in the comment section. check it by typing
+          something and then waiting for just a sec.
+        </p>
+        <div class="indicator"></div>
+      </section>
+      <form class="form" method="get">
+        <fieldset>
+          <legend>Personal view</legend>
+          <label for="trip">Tell us about your first trip to the zoo:</label>
+          <textarea name="trip" id="trip" name="about-my-trip"></textarea>
+          <button type="submit" class="button" id="submit-button">Save</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <script>
+      let button = document.getElementById("submit-button");
+      let input = document.getElementById("trip");
+      let timeout = null;
+
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        clearTimeout(timeout);
+        button.classList.toggle("is-loading");
+        // button.disabled = true;
+        // input.disabled = true;
+      });
+
+      input.addEventListener("keyup", function (event) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+          button.classList.add("shake");
+        }, 1000);
+      });
+
+      button.addEventListener("animationend", function (event) {
+        button.classList.remove("shake");
+      });
+    </script>
+  </body>
+</html>
