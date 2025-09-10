@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="custom-property-transition.css" />
+    <title>Custom Properties Transition</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="main-heading">Custom Property Transition</h1>
+      <div class="button-container">
+        <button class="button">Try it Yourself</button>
+      </div>
+      <div class="container__para">
+        <p>
+          The syntax of a defined property may be any of the following data
+          types: &lt;length&gt;, &lt;number&gt;, &lt;percentage&gt;, &lt;length-
+          percentage&gt; (for values that may be either a length or percentage),
+          &lt;color&gt;, &lt;image&gt;, &lt;url&gt; (defined using the url()
+          function), &lt;integer&gt;, &lt;angle&gt;, &lt;time&gt;,
+          &lt;resolution&gt; (such as 300dpi), &lt;transform-function&gt; (such
+          as scale() or rotate(); see chapter 16), or &lt;custom-ident&gt; (a
+          user-defined string). You can also specify keyword values, such as
+          auto. Note that the given syntax must be enclosed in quotes.
+        </p>
+        <p>
+          Providing definitions for your custom properties isnt only useful for
+          transitions and animations but also as means of implementing type
+          safety. This means you can ensure the browser ignores any invalid
+          custom property values if you accidentally author one in a way that
+          doesnt match the syntax definition.
+        </p>
+        <p>
+          You can also define more complex syntaxes. However, in some cases, the
+          browser will not be able to interpolate more complex values for a
+          transition or animation when you do.
+        </p>
+        <p>
+          Use a | symbol as an “or” to indicate that the value can be one of two
+          or more val- ues. For example, syntax: "true | false" defines a
+          Boolean property, or syntax: "&lt;color&gt; | &lt;hue&gt; | auto"
+          accepts either a color, hue, or the keyword auto.
+        </p>
+        <p>
+          Use the symbol + to indicate a space-separated list of values. For
+          example, syntax: "&lt;integer&gt;+" accepts properties with one or
+          more integer values. Similarly, the sym- bol # defines a
+          comma-separated list.
+        </p>
+        <p>
+          Finally, you can also define a universal syntax with an asterisk. Thus
+          syntax: "*" will allow the property to be set to any value. When you
+          do this, defining an initial value is not required.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
