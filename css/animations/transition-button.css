@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: unset;
+}
+.container {
+    position: relative;
+    margin-block: 2em;
+}
+.button {
+    font: inherit;
+    font-size: 1.1rem;
+    margin-block-start: 4em;
+    padding: 0.5em 1em;
+    background-color: #d2691e;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    /* transition-property: all; */
+    /* transition-duration: 0.5s; */
+
+}
+.button:hover {
+    background-color: teal;
+    border-radius: 0.5em;
+    transition: all 3s ease-in-out;
+
+}
+.box {
+    position: absolute;
+    left: 20px;
+    inline-size: 50px;
+    block-size: 50px;
+    background-color: #2d3447;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s steps(30);
+}
+.box:hover {
+    left: 500px;
+}
