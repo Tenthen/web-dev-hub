@@ -1,0 +1,173 @@
+
+:root {
+    --topic-font: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+    --gap-size: 1.5rem;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.1rem;
+  color: #464646;
+  margin: unset;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.container {
+  /* max-inline-size: 1080px; */
+  background-color: #3ac58b;
+  margin-inline: auto;
+  display: flex;
+  flex-flow: wrap;
+  gap: 10px;
+  padding: 1em;
+}
+.main-header  {
+  flex: 100%;
+}
+.main-header h1 {
+    font-family: var(--topic-font);
+    /* font-weight: normal; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffa500;
+    letter-spacing: 0.05em;
+    text-shadow: 8px 8px 6px #0d0e0d;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--gap-size);
+  padding: 0.5rem;
+  list-style: none;
+  background-color: #234d47;
+  margin-inline-start: -1;
+}
+
+.site-nav > li > a {
+  display: block;
+  text-decoration: none;
+  background-color: #ee7e2d;
+  padding: 0.5rem 1rem;
+  /* margin: 10px; */
+  color: #fff;
+}
+
+.site-nav > .nav-right {
+  margin-inline-start: auto;
+}
+.main-content {
+  background-color: #fff;
+  flex: 3 1 67%;
+  padding: clamp(2em, 3em + 1svw, 4em);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.main-content h2, .main-content h3 {
+  font-family: var(--topic-font);
+  text-align: center;
+  text-transform: uppercase;
+  color: #234d47;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+.main-content h3{
+    font-size: 1.2rem;
+}
+.main-content ul {
+    list-style: url(../../assets/image/icon_bullet.png); 
+}
+.main-content .strong-upper {
+    font-family: var(--topic-font);
+    text-transform: uppercase;
+    /* font-weight: normal; */
+    font-size: 1rem;
+    /* color: #072b25; */
+}
+
+.side-form {
+  flex: 0.3 0 20%;
+  display: flex;
+  flex-flow: column;
+}
+.form-section {
+  min-inline-size: 18em;
+  background-color: #fff;
+  flex: 1 0 auto;
+  padding-block: 1em;
+  
+}
+.stack > * + * {
+  margin-block-start: 20px;
+  padding-block: 2em;
+}
+.login-section {
+  width: 90%;
+  margin-inline: auto;
+}
+.login-section h2 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  text-align: end;
+  text-transform: uppercase;
+}
+.login-section .form-group {
+  margin: 10px unset;
+}
+
+.login-section fieldset {
+  border: none;
+}
+.login-section input:not([type="checkbox"]):not([type="radio"]):not([type=submit]){
+  display: block;
+  inline-size: 20em;
+  margin-block: 10px;
+  padding: 7px;
+}
+.login-section input[type="submit"] {
+  margin-block-start: 1em;
+  background-color: #fff;
+  border: 2px solid #ee7e2d;
+  padding: 0.5em 1em;
+  outline: none;
+  cursor: pointer;
+}
+.signup-section {
+  padding: 1em;
+  text-align: center;
+}
+.signup-section .cost-initial {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.signup-section .cost {
+  font-family: var(--topic-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.7;
+}
+.signup-section .cost-currency {
+  font-size: 2em;
+}
+.signup-section .cost-dollars {
+  font-size: 4em;
+}
+.signup-section .cost-cents {
+  font-size: 1.5em;
+  align-self: flex-start;
+}
+
+.signup-section button[type="submit"] {
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #ee7e2d;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px;
+  inline-size: 90%;
+  text-transform: capitalize;
+  cursor: pointer;
+}
