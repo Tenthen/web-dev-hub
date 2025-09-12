@@ -1,0 +1,106 @@
+@layer reset, theme, global, layout, medules, utilities;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  select,
+  input,
+  textarea,
+  button {
+    font: inherit;
+  }
+  canvas,
+  img,
+  picture,
+  figure {
+    max-inline-size: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+  }
+}
+@layer theme {
+    :root {
+        --brand-color-1: #234d47;
+        --background-color-0: #fff;
+        --background-color-1: #f9f9f9;
+        --background-color-2: #808080;
+        --background-color-3: #2d3447;
+        --border-color-1: #bbb;
+        --border-color-2: #ccc;
+        --border-color-3: #777;
+        --foreground-color-0: #000;
+        --foreground-color-1: #654;
+        --foreground-color-2: #565656;
+        --foreground-color-3: #39431a;
+        --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+        --font-main-2: Arial, Helvetica, sans-serif;
+        --font-heading-1: Georgia, Times, serif;
+        --font-heading-2: Georgia, 'Times New Roman', Times, serif;
+        --gap-size: 1.5em;
+
+        accent-color: var(--foreground-color-1);
+        color-scheme: light;
+    }
+}
+@layer global {
+    :root {
+        font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+    }
+    body {
+        font-family: var(--font-main-1);
+        color: var(--foreground-color-3);
+        line-height: 1.4;
+    }
+    a:where(:any-link) {
+        color: var(--brand-color-1);
+        text-decoration: none;
+    }
+}
+@layer layout {
+    .l-homepage {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--gap-size);
+    }
+}
+@layer modules {
+    .card {
+        padding: var(--gap-size);
+        max-inline-size: 25em;
+        margin-inline: auto;
+        margin-block: var(--gap-size);
+        background-color: var(--background-color-3);
+        color: var(--background-color-0);
+        line-height: 1.6;
+        transform: translate(50px, 20px) rotate(-15deg) ;
+        /* transform: skew(10deg); */
+        /* transform: scale(1.1); */
+        /* transform: translate(20px, 40px); */
+    }
+    .card__image img {
+        display: block;
+        margin-inline: auto;
+        inline-size: 350px;
+        /* block-size: 350px; */
+        object-fit: cover;
+       
+    }
+    .card__heading {
+        font-family: var(--font-heading-1);
+        font-size: 1.3rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
