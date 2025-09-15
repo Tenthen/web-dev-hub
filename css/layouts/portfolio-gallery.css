@@ -1,0 +1,39 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --gap-size: 1.5em;
+
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: unset;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    background-color: darkslategray;
+    gap: 0.3em;
+    grid-auto-flow: dense;
+}
+.gallery-items {
+    margin: unset;
+    display: flex;
+    flex-direction: column;
+}
+.gallery-items figcaption {
+    background-color: #fff;
+    padding: 0.3em 0.8em;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.gallery-items img {
+    max-inline-size: 100%;
+    flex: 1;
+    object-fit: cover;
+}
+.container .features {
+    grid-row: span 2;
+    grid-column: span 2;
+}
