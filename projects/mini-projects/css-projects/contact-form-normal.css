@@ -1,0 +1,196 @@
+@layer reset, theme, global, layout, modules;
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: unset;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  canvas,
+  figure,
+  img,
+  picture {
+    max-inline-size: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+@layer theme {
+  :root {
+    --brand-color-1: #2d3447;
+    --brand-color-2: #008abc;
+    --brand-color-3: #d2691e;
+    --brand-color-31: #b1401d;
+
+    --brand-color-4: #818283;
+    --brand-color-5: #b2b3b6;
+
+    --background-color-0: #fff;
+    --background-color-1: #f9f9f9;
+    --background-color-2: #eee;
+    --background-color-3: #808080;
+    --border-color-1: #ccc;
+    --border-color-2: #bbb;
+    --border-color-3: #999;
+    --border-color-4: #777;
+    --foreground-color-0: #000;
+    --foreground-color-1: #39431a;
+    --foreground-color-2: #654;
+    --foreground-color-3: #565656;
+    --font-main-1: Verdana, Geneva, Tahoma, sans-serif;
+    --font-main-2: Arial, Helvetica, sans-serif;
+    --font-heading-1: Georgia, Times, serif;
+    --gap-size-extra-large: 3em;
+    --gap-size-larger: 2em;
+    --gap-size-large: 1.5em;
+    --gap-size-medium: 1em;
+    --gap-size-small: 0.5em;
+    --gap-size-extra-small: 0.25em;
+
+    accent-color: var(--foreground-color-2);
+    color-scheme: light;
+  }
+}
+@layer global {
+  :root {
+    font-size: clamp(1rem, 0.8svw + 0.4em, 1.2rem);
+  }
+  body {
+    font-family: var(--font-main-1);
+    color: var(--foreground-color-1);
+    line-height: 1.4;
+  }
+  a:where(:any-link) {
+    text-decoration: none;
+    color: var(--brand-color-2);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading-1);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+}
+@layer layout {
+}
+
+@layer modules {
+  .contact-form {
+    max-inline-size: 40rem;
+    margin-inline: auto;
+    padding-inline: var(--gap-size-small);
+    
+    @media (min-width: 400px) {
+      padding-inline: var(--gap-size-medium);
+    }
+  }
+  .heading--form {
+    font-family: var(--font-main-2);
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  fieldset {
+    max-inline-size: 40em;
+    border: 1px solid var(--border-color-3);
+    border-radius: var(--gap-size-large);
+    padding-block: var(--gap-size-large) var(--gap-size-small);
+    padding-inline: var(--gap-size-large);
+
+    legend {
+      font-size: 0.9rem;
+      padding: var(--gap-size-small) var(--gap-size-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+  }
+  .form__group {
+    display: flex;
+    gap: var(--gap-size-extra-small);
+    flex-flow: wrap;
+    margin-block: var(--gap-size-medium);
+
+    label {
+      inline-size: 6rem;
+      font-size: 1.1rem;
+    }
+  }
+  .form__group--panel {
+    input {
+      background-color: transparent;
+      border: 0;
+      border-block-end: 1px solid var(--border-color-4);
+      outline: none;
+      flex: 0.9;
+      margin-inline-start: var(--gap-size-large);
+      padding-inline: var(--gap-size-medium);
+
+      &:hover,
+      &:focus {
+        border-color: var(--foreground-color-1);
+      }
+    }
+  }
+  .form__group--message {
+    textarea {
+      border: 1px solid var(--border-color-4);
+      border-radius: var(--gap-size-medium);
+      flex: 0.9;
+      block-size: 7em;
+      margin-inline-start: var(--gap-size-large);
+      margin-block-start: var(--gap-size-large);
+      padding-inline: var(--gap-size-large);
+      outline: none;
+
+      &:hover,
+      &:focus {
+        border-color: var(--foreground-color-1);
+      }
+    }
+
+    @media (min-width: 540px) {
+      margin-block-start: var(--gap-size-large);
+    }
+  }
+  .form__group--button {
+    justify-content: end;
+    padding-inline: var(--gap-size-small);
+    padding-block-start: var(--gap-size-medium);
+  }
+  .button-form {
+    padding-block: var(--gap-size-small);
+    padding-inline: var(--gap-size-large);
+    border: 0;
+    background-color: var(--brand-color-1);
+    border-radius: var(--gap-size-small);
+    color: var(--background-color-0);
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-out;
+    /* 
+        &:hover,
+        &:focus {
+          background-color: var(--brand-color-31);
+        } */
+  }
+}
