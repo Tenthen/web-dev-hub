@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="navbar-normal-site.css" />
+    <title>Navbar Usual Site</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <header class="site-header">
+        <h1 class="heading heading--page">
+          <span class="the-analog">The</span><br />
+          <span class="analog">Analog</span><br />
+          <span class="specialists">Specialists</span>
+        </h1>
+      </header>
+      <nav class="main-menu">
+        <div class="search">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            class="search-bar"
+            placeholder="Search"
+          />
+          <button type="button" class="btn-toggle btn-toggle--search">
+            Search
+          </button>
+        </div>
+        <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+        <ul class="main-menu__nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sale">For Sale</a></li>
+          <li><a href="#repairs">Repairs</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <script>
+      const toggleNav = document.getElementsByClassName("btn-toggle--nav")[0];
+      const menuNav = document.getElementsByClassName("main-menu__nav")[0];
+      let menuNavHeight = menuNav.scrollHeight;
+
+      let searchButton =
+        document.getElementsByClassName("btn-toggle--search")[0];
+      let searchBar = document.getElementsByClassName("search-bar")[0];
+
+      toggleNav.addEventListener("click", function (event) {
+        menuNav.classList.toggle("is-open");
+        if (menuNav.classList.contains("is-open")) {
+          menuNav.style.setProperty("height", menuNavHeight + "px");
+        } else {
+          menuNav.style.setProperty("height", "0");
+        }
+      });
+
+      searchButton.addEventListener("click", function (event) {
+        searchBar.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
