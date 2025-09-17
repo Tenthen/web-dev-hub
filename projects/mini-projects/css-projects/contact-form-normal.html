@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact-form-normal.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <div class="contact-form">
+        <h3 class="heading--form">Contact Us</h3>
+        <form action="contact-form" method="post" class="form">
+          <fieldset>
+            <legend>Comment</legend>
+            <div class="form__group form__group--panel">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="form__group form__group--panel">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form__group form__group--message">
+              <label for="message">Message:</label>
+              <textarea name="message" id="message"></textarea>
+            </div>
+            <div class="form__group form__group--button">
+              <input type="submit" value="Submit" class="button button-form" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+</body>
+</html>
