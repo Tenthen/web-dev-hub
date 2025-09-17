@@ -1,0 +1,184 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    font-size: clamp(0.9rem, 0.5svw + 0.6em, 1.125rem);
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: unset;
+}
+.header {
+    padding: 0.4em 1em;
+    background-color: #008abc;
+    color: #fff;
+
+}
+@media (min-width: 560px) {
+    .header {
+        padding: 1em;
+    }
+}
+
+@media (min-width: 800px) {
+    .header {
+        padding: 1em 4em;
+    }
+}
+
+.title h1 {
+    margin-block: 0.3em 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+@media (min-width: 560px) {
+    .title h1 {
+        font-size: 2.25rem;
+    }
+}
+.title .slogan{
+    font-size: 0.875rem;
+    margin: unset;
+}
+a:link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #147b68;
+}
+a:visited {
+    color: #143068;
+}
+.main-nav {
+    position: relative;
+    margin: unset;
+}
+.main-nav .menu-toggle {
+    position: absolute;
+    top: -1.2em;
+    right: 0.2em;
+
+    border: none;
+    background-color: transparent;
+
+    inline-size: 1em;
+    block-size: 1em;
+    font-size: 3em;
+    line-height: 0.4;
+    white-space: nowrap;
+    text-indent: 5em;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.main-nav .menu-toggle::after {
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+
+    display: block;
+    text-indent: 0;
+    content: "\2261";
+}
+.main-nav .menu-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.main-nav .menu-dropdown.is-open {
+    display: block;
+}
+@media (min-width: 560px) {
+    .main-nav .menu-toggle {
+        display: none;
+    }
+    .main-nav .menu-dropdown {
+        display: block;
+        position: static;
+    }
+}
+.menu-dropdown .menu-nav {
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin: unset;
+
+}
+.menu-dropdown .menu-nav > li + li {
+    border-block-start: 0.1em solid #fff;
+}
+.menu-dropdown .menu-nav > li > a {
+    display: block;
+    font-size: 1.05em;
+    padding: 0.8em 1em;
+    text-transform: capitalize;
+    text-align: center;
+    background-color: rgb(236, 197, 169);
+}
+@media (min-width: 560px) {
+    .menu-dropdown .menu-nav {
+        display: flex;
+        /* padding-inline: 1em; */
+        justify-content: center;
+    }
+    .menu-dropdown .menu-nav > li + li {
+        border: none;
+    } 
+    .menu-dropdown .menu-nav > li {
+        flex: 1;
+    }
+
+    .menu-dropdown .menu-nav > li > a {
+        /* padding: 0.5em; */
+    }
+}
+.hero {
+    padding: 2em 1em;
+    text-align: center;
+    background-image: url('../../assets/image/caffeine-cloud.jpg');
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0.2em 0.2em 0.4em #000;
+}
+@media (min-width: 560px) {
+    .hero {
+        padding: 5em 3em;
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 800px) {
+    .hero {
+        padding: 7em 6em;
+        font-size: 1.2em;
+    }
+}
+.main-content {
+    padding: 1em;
+    line-height: 1.4;
+    color: #444;
+}
+@media (min-width: 560px) {
+    .main-content {
+        padding: 2em 1em;
+    }
+}
+@media (min-width: 650px) {
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5em;
+        max-inline-size: 1400px;
+        margin-inline: auto;
+    }
+}
+@media (min-width: 800px) {
+    .main-content {
+        padding: 2em 4em;
+    }
+}
+.subtitle {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    margin-block: 1.5em;
+    color: #000;
+}
