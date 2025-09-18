@@ -1,0 +1,92 @@
+@import url(the-analog-specialists.css);
+.login {
+    position: relative;
+    inline-size: 21rem;
+    margin-inline: auto;
+    margin-block: var(--gap-size-extra-large);
+    background-color: var(--foreground-color-0);
+    border-radius: var(--gap-size-medium);
+    padding: var(--gap-size-large);
+    padding-block: calc(var(--gap-size-large) * 3) var(--gap-size-extra-large);
+    color: var(--background-color-0);
+}
+.image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.heading--login {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--background-color-0);
+    margin-block-end: var(--gap-size-large);
+}
+.form__group {
+    display: flex;
+    gap: var(--gap-size-extra-small);
+    flex-flow: wrap;
+    margin-block: var(--gap-size-medium);
+}
+.form__group--panel {
+    label {
+        inline-size: 6rem;
+        font-size: 1.1rem;
+    }
+    input {
+        background-color: transparent;
+        border: 0;
+        border-block-end: 2px solid var(--border-color-2);
+        color: var(--background-color-0);
+        outline: none;
+        flex: 0.9;
+        margin-inline-start: var(--gap-size-large);
+        padding-inline: var(--gap-size-medium);
+
+        &:hover, &:focus {
+            border-color: var(--background-color-0);
+        }
+    }
+}
+.form__group--button {
+    justify-content: end;
+    padding-inline: var(--gap-size-small);
+    padding-block-start: var(--gap-size-large);
+}
+.button--form {
+    flex: 1;
+    font-size: 1.1rem;
+    padding-block: 0.75rem;
+    border: 0;
+    background-color: var(--brand-color-3);
+    border-radius: var(--gap-size-extra-large);
+    color: var(--background-color-0);
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+
+    &:hover, &:focus {
+        transform: scale(1.05);
+        background-color: var(--brand-color-31);
+    }
+}
+.form__group--setting {
+    text-align: center;
+    color: var(--border-color-2);
+
+     a {
+        font-family: var(--font-main-2);
+        font-size: 0.9rem;
+        color: var(--background-color-0);
+        text-transform: uppercase;
+        transition: border 0.2s ease-out;
+
+        &.forget-password-link {
+            font-size: 0.8rem;
+        }
+        &:hover, &:focus {
+            border-block-end: 1px solid var(--background-color-0);
+        }
+    }
+}
