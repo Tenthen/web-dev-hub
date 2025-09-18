@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Modal</title>
+</head>
+<body>
+    <div class="login">
+        <img src="../../assets/image/Icons/user.png" class="image" width="200" alt="Avature">
+        <h2 class="heading heading--page heading--login">
+            <span class="the-analog">The</span><br />
+            <span class="analog">Analog</span><br />
+            <span class="specialists">Specialists</span>
+        </h2>
+        <form action="login" method="post" class="form">
+          <div class="form__group form__group--panel">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter username">
+          </div>
+          <div class="form__group form__group--panel">
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password" placeholder="Enter Password">
+          </div>
+          <div class="form__group form__group--button">
+            <input type="submit" value="Sign In" class="button button--form">
+          </div>
+          <div class="form__group form__group--setting">
+            <p>Don't have an account? <a href="signup" class="signup-link">Sign Up</a><br>
+            <a href="forget" class="forget-password-link">forget password</a></p>
+          </div>
+        </form>
+      </div>
+</body>
+</html>
