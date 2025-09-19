@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="channel-7.css" />
+    <title>Channel-7 News Channel</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="heading heading--site">Channel-7</h1>
+      <nav class="main-menu">
+        <div class="select">
+          <label for="edition">Edition</label>
+          <select name="edition" id="edition">
+            <option value="us">U.S.</option>
+            <option value="uk">U.K.</option>
+            <option value="fr">Fr.</option>
+            <option value="sp">Sp.</option>
+          </select>
+        </div>
+        <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+        <ul class="main-menu__nav">
+          <li>
+            <a
+              href="#news-markets"
+              class="link-toggle link-toggle--dropdown-nav"
+              >News <br />& Markets</a
+            >
+            <ul class="nav__dropdown nav__dropdown--news">
+              <li><a href="#trends">Trends</a></li>
+              <li><a href="#sport">Sport</a></li>
+              <li><a href="#business">Business</a></li>
+              <li><a href="#money">Money</a></li>
+              <li><a href="#stock-market">stock market</a></li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#sectors-industries"
+              class="link-toggle link-toggle--dropdown-nav"
+              >Sectors <br />& Industries</a
+            >
+            <ul class="nav__dropdown nav__dropdown--sector">
+              <li><a href="#manufacturing">manufacturing</a></li>
+              <li><a href="#tourism">tourism</a></li>
+              <li><a href="#agriculture">agriculture</a></li>
+              <li><a href="#technology">technology</a></li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#analysis-opinion"
+              class="link-toggle link-toggle--dropdown-nav"
+              >Analysis <br />& Opinion</a
+            >
+            <ul class="nav__dropdown nav__dropdown--analysis">
+              <li><a href="#politics">politics</a></li>
+              <li><a href="#researches">researches</a></li>
+              <li><a href="#new-future">new future</a></li>
+              <li><a href="#history">history</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="search-nav">
+        <div class="social-network">
+          <a href="#register">register</a>
+          <span class="signin-with">
+            <a href="#sign-in">sign in</a>
+            <a href="#twitter" class="hide">twitter</a>
+            <a href="#facebook" class="hide">facebook</a>
+            <a href="#linkedin" class="hide">linkedin</a>
+            <a href="#google" class="hide">google</a>
+          </span>
+        </div>
+        <div class="search">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            class="search__bar"
+            placeholder="Search News & Quotes"
+          />
+          <button type="submit" class="btn-toggle btn-toggle--search">
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="trend">
+      <div class="trend__inner">
+        <h2 class="heading heading--main"></h2>
+        <p></p>
+      </div>
+    </aside>
+    <main class="main-content">
+
+    </main>
+    <aside class="sidebar">
+
+    </aside>
+    <footer class="footer">
+      <p>&copy;2025 Aug, Channel-7 Inc.</p>
+    </footer>
+    <script>
+      let toggleNav = document.getElementsByClassName("btn-toggle--nav")[0];
+      let nav = document.getElementsByClassName("main-menu__nav")[0];
+      let navHeight = nav.scrollHeight;
+
+      let toggleLinks = document.getElementsByClassName("link-toggle");
+      let dropdownNav = document.getElementsByClassName("nav__dropdown");
+      let dropdownNavHeight = 0;
+      let count = 0;
+
+      let searchButton = document.getElementsByClassName('btn-toggle--search')[0];
+      let searchBar = document.getElementById('search');
+
+      toggleNav.addEventListener("click", function (event) {
+        nav.classList.toggle("is-open");
+        if (nav.classList.contains("is-open")) {
+          nav.style.setProperty("height", navHeight + "px");
+        } else {
+          nav.style.setProperty("height", "0");
+        }
+      });
+
+      for (let i = 0; i < toggleLinks.length; i++) {
+        toggleLinks[i].addEventListener("click", function (event) {
+          dropdownNavHeight = dropdownNav[i].scrollHeight;
+          while (count < 3) {
+            if (dropdownNav[i].classList.contains("is-open")) {
+              if (i == count) break;
+            } else {
+              dropdownNav[count].classList.remove("is-open");
+              toggleLinks[count].classList.remove("is-open");
+              dropdownNav[count].style.setProperty("height", "0");
+            }
+
+            count += 1;
+          }
+          dropdownNav[i].classList.toggle("is-open");
+          toggleLinks[i].classList.toggle("is-open");
+          count = 0;
+
+          if (dropdownNav[i].classList.contains("is-open")) {
+            dropdownNav[i].style.setProperty(
+              "height",
+              dropdownNavHeight + "px"
+            );
+          } else {
+            dropdownNav[i].style.setProperty("height", "0");
+          }
+        });
+      }
+
+      searchButton.addEventListener('click', function(event){
+        searchBar.classList.toggle('is-open');
+      })
+
+    </script>
+  </body>
+</html>
