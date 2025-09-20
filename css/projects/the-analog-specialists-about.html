@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="the-analog-specialists-about.css" />
+    <title>The Analog Specialists About Us</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="heading heading--page">
+        <span class="the-analog">The</span><br />
+        <span class="analog">Analog</span><br />
+        <span class="specialists">Specialists</span>
+      </h1>
+    </header>
+    <nav class="main-menu">
+      <div class="search">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          class="search-bar"
+          placeholder="Search"
+        />
+        <button type="button" class="btn-toggle btn-toggle--search">
+          Search
+        </button>
+      </div>
+      <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+      <ul class="main-menu__nav">
+        <li><a href="the-analog-specialists-index.html">Home</a></li>
+        <li><a href="the-analog-specialists-sale.html">For Sale</a></li>
+        <li><a href="the-analog-specialists-repair.html">Repairs</a></li>
+        <li><a href="the-analog-specialists-about.html" class="active-page">About</a></li>
+        <li><a href="the-analog-specialists-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <aside class="hero-image">
+      <div class="hero-image__inner">
+        <h2>Feel the sound of our Piano.</h2>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="main-content__intro">
+        <h2 class="heading">Who We Are?</h2>
+        <p>
+          The Analog Specialists was created when we, me and my girlfriend, were
+          strunk by the guitar we were playing, in the middle of the play, sing
+          and dance. It killed the mood & joy totally.
+        </p>
+        <p>
+          When I try to fix the guitar it took me more that a week. That was the
+          time I decided to make the analog world less bitter, harsh, by keeping
+          it around & together.
+        </p>
+      </div>
+      <div class="content__team">
+        <article class="team__member">
+          <img
+            src="../../assets/image/team-member2.jpg"
+            class="member__image"
+            alt="team-member"
+          />
+          <div class="team__detail">
+            <h3 class="heading--name">Simi Bhagwandass</h3>
+            <p>Simi is a travel blogger and avid adventure seeker. She is also 
+              a freelance travel, dining, architecture and design writer.
+            </p>
+          </div>
+          <p class="member__occupation">Company Position <br> <span class="position">CTO</span> </p>
+        </article>
+        <article class="team__member">
+          <img
+            src="../../assets/image/team-member1.jpg"
+            class="member__image"
+            alt="team-member"
+          />
+          <div class="team__detail">
+            <h3 class="heading--member">David Mcintyre</h3>
+            <p>
+              David is an American photographer who,
+              though originally from Los Angeles, has lived in HongKong and
+              Beijing for the past 18 years with his wife and two cheldren.
+            </p>
+          </div>
+          <p class="member__occupation">Company Position <br><span class="position">CEO</span></p>
+
+        </article>
+        <article class="team__member">
+          <img
+            src="../../assets/image/team-member3.jpg"
+            class="member__image"
+            alt="team-member"
+          />
+          <div class="team__detail">
+            <h3 class="heading--member">Sam Imende</h3>
+            <p>
+               Sam is a summer consultant at Dalberg, a
+              global development-consulting firm, and a managin partner of a
+              start-up Africa brand.
+            </p>
+          </div>
+          <p class="member__occupation">Company Position <br> <span class="position">CTO</span></p>
+
+        </article>
+        <article class="team__member">
+          <img
+            src="../../assets/image/mona.jpg"
+            class="member__image"
+            alt="team-member"
+          />
+          <div class="team__detail">
+            <h3 class="heading--member">Glenna Gordon</h3>
+            <p>
+              Glenna is a freelance documentary writer
+              and a photographer who splits her time between West Africa and New
+              York.
+            </p>
+          </div>
+          <p class="member__occupation">Company Position <br> <span class="position">CFO</span></p>
+
+        </article>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>&copy;2025 Aug, The Analog Specialists</p>
+    </footer>
+
+    <script>
+      const toggleNav = document.getElementsByClassName("btn-toggle--nav")[0];
+      const menuNav = document.getElementsByClassName("main-menu__nav")[0];
+      let menuNavHeight = menuNav.scrollHeight;
+
+      let searchButton =
+        document.getElementsByClassName("btn-toggle--search")[0];
+      let searchBar = document.getElementsByClassName("search-bar")[0];
+
+      toggleNav.addEventListener("click", function (event) {
+        menuNav.classList.toggle("is-open");
+        if (menuNav.classList.contains("is-open")) {
+          menuNav.style.setProperty("height", menuNavHeight + "px");
+        } else {
+          menuNav.style.setProperty("height", "0");
+        }
+      });
+
+      searchButton.addEventListener("click", function (event) {
+        searchBar.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
