@@ -1,0 +1,67 @@
+@import url(the-analog-specialists.css);
+
+.hero-image {
+    background: url(../../assets/image/Community.jpg) no-repeat center;
+    background-size: cover;
+
+    @media (min-width:740px) {
+        background: url(../../assets/image/Speaker_sound.jpg) repeat;
+    }
+}
+.hero-image__inner {
+    color: var(--brand-color-1);
+
+    h2 {
+        position: relative;
+        backdrop-filter: blur(15px);
+        text-shadow: 0.05em 0.05m 0.1em var(--foreground-color-1);
+        z-index: 0;
+    }
+}
+.content__team {
+    max-inline-size: 1180px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: var(--gap-size-large);
+    /* padding-inline: var(--gap-size-large); */
+}
+.team__member {
+    display: grid;
+    /* gap: 0; */
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    max-inline-size: 23em;
+    margin-inline: auto;
+    position: relative;
+    background-color: var(--foreground-color-0);
+    padding: var(--gap-size-large);
+    padding-block: calc(var(--gap-size-extra-large) * 2) var(--gap-size-extra-large);
+    margin-block-start: calc(var(--gap-size-extra-large) * 2);
+    border-radius: var(--gap-size-medium);
+    color: var(--background-color-0);
+}
+.member__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    inline-size: 150px;
+    border-radius: 50%;
+
+}
+.team__detail {
+    text-align: center;
+
+    p:first-of-type {
+        text-align: left;
+    }
+}
+.member__occupation {
+    text-align: center;
+
+    .position {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
