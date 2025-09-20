@@ -1,0 +1,119 @@
+@import url(the-analog-specialists.css);
+@import url(the-analog-specialists-form.css);
+
+.hero-image {
+  background-image: url(../../assets/image/coffee.jpg);
+  /* background-position: contain; */
+
+  @media (min-width: 920px) {
+    background: url(../../assets/image/Contact-us.jpg) no-repeat;
+    /* background-size: cover; */
+  }
+}
+.hero-image__inner {
+  float: left;
+  color: var(--foreground-color-1);
+  margin-inline-start: 10%;
+
+  h2 {
+    text-shadow: 0.05em 0.05em 0.1em var(--brand-color-1);
+  }
+}
+.heading {
+  font-size: 1.7rem;
+}
+.contact-list {
+  max-inline-size: 35em;
+  margin-inline: auto;
+  list-style-type: none;
+}
+.contact-list > li > a {
+  font-size: 1.1rem;
+  display: inline-block;
+  padding: var(--gap-size-small) var(--gap-size-extra-large);
+  text-indent: -7em;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-block-end: var(--gap-size-extra-small);
+
+  &[href^="tel"] {
+    background: url(../../assets/image/Icons/tele.png) no-repeat left bottom;
+    background-size: 2rem;
+  }
+  &[href^="https"] {
+    background: url(../../assets/image/Icons/web-services.png) no-repeat left bottom;
+    background-size: 2rem;
+  }
+  &[href^="mailto"] {
+    background: url(../../assets/image/Icons/mail.png) no-repeat left bottom;
+    background-size: 2rem;
+  }
+}
+.contact-icon {
+  display: inline-block;
+  inline-size: 7em;
+}
+.featured-social {
+  font-size: 1.1rem;
+  margin-block-start: var(--gap-size-medium);
+  margin-inline-start: -2rem;
+
+  @media (min-width: 540px) {
+    margin-inline-start: var(--gap-size-extra-large);
+  }
+}
+.contact-list__social {
+  display: flex;
+  list-style-type: none;
+  padding: unset;
+}
+.contact-list__social > li {
+  padding-block: var(--gap-size-medium);
+}
+.contact-list__social > li > a {
+  display: block;
+  inline-size: 2em;
+  block-size: 2em;
+  background: url(../../assets/image/Icons/social_media_sprite.png) no-repeat;
+  text-indent: 5em;
+  overflow: hidden;
+  margin-inline: var(--gap-size-extra-small);
+
+  @media (min-width: 540px) {
+    margin-inline-start: var(--gap-size-medium);
+  }
+}
+.contact-list__social > li > a {
+  background-size: 2em;
+
+  &[href^="instagram"] {
+    background-position: 0 12.5%;
+  }
+  &[href^="linkedin"] {
+    background-position: 0 25%;
+  }
+  &[href^="twitter"] {
+    background-position: 0 75%;
+  }
+  &[href^="pinterest"] {
+    background-position: 0 50%;
+  }
+  &[href^="youtube"] {
+    background-position: 0 100%;
+  }
+  &[href^="telegram"] {
+    background-position: 0 62.5%;
+  }
+  &[href^="whatsapp"] {
+    background-position: 0 87.5%;
+  }
+}
+h4 {
+  margin-block: var(--gap-size-large) 0;
+  text-align: left;
+}
+
+address {
+  padding-inline: var(--gap-size-large);
+  padding-block-end: var(--gap-size-large);
+}
