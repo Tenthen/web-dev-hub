@@ -1,0 +1,185 @@
+.modal-backdrop.is-open {
+  background-color: #00000099;
+  position: fixed;
+  inset: 0;
+}
+.modal-login {
+  position: fixed;
+  top: 2%;
+  left: 0;
+  border: 0;
+  background-color: transparent;
+  margin-inline: auto;
+  overflow: auto;
+}
+.modal-backdrop.is-open > .modal-login {
+  display: block;
+}
+.btn-toggle--modal {
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  /* background-color: var(--foreground-color-3); */
+}
+.btn-toggle--modal::after {
+  content: "+";
+  font-size: 2rem;
+  font-weight: bold;
+  transform: rotate(45deg);
+  line-height: 1;
+}
+.login {
+  position: relative;
+  inline-size: 21rem;
+  margin-inline: auto;
+  margin-block: var(--gap-size-extra-large);
+  background-color: var(--foreground-color-0);
+  border-radius: var(--gap-size-medium);
+  padding: var(--gap-size-large);
+  padding-block: calc(var(--gap-size-large) * 3) var(--gap-size-extra-large);
+  color: var(--background-color-0);
+}
+.image-login {
+  inline-size: 150px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.heading--form {
+  font-family: var(--font-main-2);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.heading--login {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--background-color-0);
+  margin-block-end: var(--gap-size-large);
+}
+fieldset {
+  max-inline-size: 40em;
+  border: 1px solid var(--border-color-3);
+  border-radius: var(--gap-size-large);
+  padding-block: var(--gap-size-large) var(--gap-size-small);
+  padding-inline: var(--gap-size-large);
+
+  legend {
+    font-size: 0.9rem;
+    padding: var(--gap-size-small) var(--gap-size-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+}
+.form__group {
+  display: flex;
+  gap: var(--gap-size-extra-small);
+  flex-flow: wrap;
+  margin-block: var(--gap-size-medium);
+
+  label {
+    inline-size: 6rem;
+    font-size: 1.1rem;
+  }
+}
+.form__group--panel {
+  input {
+    background-color: transparent;
+    border: 0;
+    border-block-end: 1px solid var(--border-color-4);
+    outline: none;
+    flex: 0.9;
+    margin-inline-start: var(--gap-size-large);
+    padding-inline: var(--gap-size-medium);
+
+    &:hover,
+    &:focus {
+      border-color: var(--foreground-color-1);
+    }
+  }
+  .input--login {
+    border-block-end: 1px solid var(--border-color-4);
+    color: var(--background-color-0);
+
+    &:hover,
+    &:focus {
+      border-color: var(--background-color-0);
+    }
+  }
+}
+.form__group--message {
+  textarea {
+    border: 1px solid var(--border-color-4);
+    border-radius: var(--gap-size-medium);
+    flex: 0.9;
+    block-size: 7em;
+    margin-inline-start: var(--gap-size-large);
+    margin-block-start: var(--gap-size-large);
+    padding-inline: var(--gap-size-large);
+    outline: none;
+
+    &:hover,
+    &:focus {
+      border-color: var(--foreground-color-1);
+    }
+  }
+
+  @media (min-width: 540px) {
+    margin-block-start: var(--gap-size-large);
+  }
+}
+.form__group--button {
+  justify-content: end;
+  padding-inline: var(--gap-size-small);
+  padding-block-start: var(--gap-size-medium);
+}
+.button-form {
+  padding-block: var(--gap-size-small);
+  padding-inline: var(--gap-size-large);
+  border: 0;
+  background-color: var(--brand-color-1);
+  border-radius: var(--gap-size-small);
+  color: var(--background-color-0);
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-out;
+/* 
+  &:hover,
+  &:focus {
+    background-color: var(--brand-color-31);
+  } */
+}
+.button-form--login {
+  font-size: 1.1rem;
+  flex: 1;
+  padding-block: 0.75rem;
+  background-color: var(--brand-color-3);
+  border-radius: var(--gap-size-extra-large);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    background-color: var(--brand-color-31);
+  }
+}
+.form__group--setting {
+  text-align: center;
+  color: var(--border-color-2);
+
+  a {
+    font-family: var(--font-main-2);
+    font-size: 0.9rem;
+    color: var(--background-color-0);
+    text-transform: uppercase;
+    transition: border 0.2s ease-out;
+
+    &.forget-password-link {
+      font-size: 0.8rem;
+    }
+    &:hover,
+    &:focus {
+      border-block-end: 1px solid var(--background-color-0);
+    }
+  }
+}
