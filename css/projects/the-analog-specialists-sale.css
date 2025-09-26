@@ -1,0 +1,105 @@
+@import url("the-analog-specialists.css");
+@import url("the-analog-specialists-form.css");
+
+body:has(.modal-backdrop.is-open){
+  overflow: hidden;
+}
+.hero-image {
+  background-image: url(../../assets/image/concert_dance.jpg);
+}
+.section {
+  display: block;
+}
+.article {
+  display: block;
+  margin-block: var(--gap-size-extra-large);
+  margin-inline: auto;
+
+  @media (min-width: 780px) {
+    /* max-inline-size: 100%; */
+    max-inline-size: 60em;
+    padding-inline: var(--gap-size-extra-large);
+
+
+    .article__inner {
+      display: flex;
+      gap: var(--gap-size-medium);
+    }
+    .article__image {
+      inline-size: 50lvw;
+      order: 1;
+      align-self: center;
+    }
+    .article__description {
+      inline-size: clamp(20em, (100vw - 20em) * 0.15 + 20em, 30em);
+      /* inline-size: clamp(20em, 20em + 5vw, 30em); */
+    }
+    .description__button {
+      display: none;
+    }
+  }
+  /* .article__button-cta {
+    display: none;
+  } */
+}
+.article__description {
+  position: relative;
+}
+.description__details {
+  margin-block-start: -12px;
+  height: auto;
+  transition: height 0.5s linear;
+}
+.description__button {
+  text-align: center;
+  padding-block: 0 var(--gap-size-medium);
+}
+.btn-toggle-article {
+  position: relative;
+  border: 0;
+  background-color: var(--border-color-3);
+  border-radius: var(--gap-size-small);
+  color: var(--background-color-0);
+  padding-block: var(--gap-size-extra-small);
+  padding-inline: var(--gap-size-medium) var(--gap-size-larger);
+  cursor: pointer;
+}
+.btn-toggle-article::after {
+  position: absolute;
+  top: 0.3em;
+  right: 0.6em;
+  content: "";
+  border: 8px solid transparent;
+  border-color: transparent transparent var(--background-color-0);
+  transition: transform 0.3s ease-out;
+}
+.description__details.is-close {
+  height: 0;
+  overflow: hidden;
+}
+.description__details.is-close + .description__button .btn-toggle-article::after {
+  transform: rotate(180deg);
+  top: 0.9em;
+}
+
+.article__button-cta {
+  display: flex;
+  justify-content: space-around;
+}
+.button {
+  font-size: 1.1rem;
+  padding: var(--gap-size-extra-small) var(--gap-size-larger);
+  border: 0;
+  border-radius: var(--gap-size-extra-small);
+  color: var(--background-color-0);
+  cursor: pointer;
+}
+.button--order {
+  background-color: var(--brand-color-1);
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--brand-color-2);
+}
+
