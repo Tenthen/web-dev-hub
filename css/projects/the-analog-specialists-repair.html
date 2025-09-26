@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="the-analog-specialists-contact.css" />
+    <title>The Analog Specialists Contact</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="heading heading--page">
+        <span class="the-analog">The</span><br />
+        <span class="analog">Analog</span><br />
+        <span class="specialists">Specialists</span>
+      </h1>
+    </header>
+    <nav class="main-menu">
+      <div class="search">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          class="search-bar"
+          placeholder="Search"
+        />
+        <button type="button" class="btn-toggle btn-toggle--search">
+          Search
+        </button>
+      </div>
+      <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+      <ul class="main-menu__nav">
+        <li><a href="the-analog-specialists-index.html">Home</a></li>
+        <li><a href="the-analog-specialists-sale.html">For Sale</a></li>
+        <li><a href="the-analog-specialists-repair.html" class="active-page">Repairs</a></li>
+        <li><a href="the-analog-specialists-about.html">About</a></li>
+        <li><a href="the-analog-specialists-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <aside class="hero-image">
+      <div class="hero-image__inner"></div>
+    </aside>
+    <main class="main-content">
+      <h1 class="heading heading--contact">Contact Us</h1>
+      <p>Email us the exprience you have with our site by filling the form, or 
+        you can get in touch our customer service. Want to use social media? We
+        are there too.
+      </p>
+      <p>Contact us with these platforms:</p>
+
+      <ul class="contact-list">
+        <li><a href="tel: +251742426712"><span class="contact-icon">tel</span> +251 742 426 712</a></li>
+        <li><a href="mailto:info@theanalogspecialist.com"><span class="contact-icon">Mail</span> info@theanalogspecialist.com</a></li>
+        <li><a href="https://www.theanalogspecialist.com"><span class="contact-icon">Website</span> theanalogspecialist.com</a></li>
+        <li class="featured-social">
+          Social Networks
+          <ul class="contact-list__social">
+            <li><a href="twitter.com/the-analog-specialists">Twitter</a></li>
+            <li><a href="pinterest.com/the-analog-specialists">Pinterest</a></li>
+            <li><a href="facebook.com/the-analog-specialists">Facebook</a></li>
+            <li><a href="youtube.com/the-analog-specialists">YouTube</a></li>
+            <li><a href="linkedin.com/the-analog-specialists">Linkedin</a></li>
+            <li><a href="instagram.com/the-analog-specialists">Instagram</a></li>
+            <li><a href="telegram.com/the-analog-specialists">Telegram</a></li>
+            <li><a href="whatsapp.com/the-analog-specialists">whatsapp</a></li>
+          </ul>
+        </li>
+      </ul>
+      <h4>Physical Address</h4>
+      <address>
+        <p>
+          20 Baldwin Road <br />
+          PO Box 761 <br />
+          Shelter Island, NY 11964
+        </p>
+      </address>
+      <div class="contact-form">
+        <h3 class="heading--form">Contact Us</h3>
+        <form action="contact-form" method="post" class="form">
+          <fieldset>
+            <legend>Comment</legend>
+            <div class="form__group form__group--panel">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="form__group form__group--panel">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form__group form__group--message">
+              <label for="message">Message:</label>
+              <textarea name="message" id="message"></textarea>
+            </div>
+            <div class="form__group form__group--button">
+              <input type="submit" value="Submit" class="button button-form" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy;2025 Aug, The Analog Specialists</p>
+    </footer>
+    <script>
+      const toggleNav = document.getElementsByClassName("btn-toggle--nav")[0];
+      const menuNav = document.getElementsByClassName("main-menu__nav")[0];
+      let menuNavHeight = menuNav.scrollHeight;
+
+      let searchButton =
+        document.getElementsByClassName("btn-toggle--search")[0];
+      let searchBar = document.getElementsByClassName("search-bar")[0];
+
+      toggleNav.addEventListener("click", function (event) {
+        menuNav.classList.toggle("is-open");
+        if (menuNav.classList.contains("is-open")) {
+          menuNav.style.setProperty("height", menuNavHeight + "px");
+        } else {
+          menuNav.style.setProperty("height", "0");
+        }
+      });
+
+      searchButton.addEventListener("click", function (event) {
+        searchBar.classList.toggle("is-open");
+      });
+    </script>
+  </body>
+</html>
