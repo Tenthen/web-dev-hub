@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="the-analog-specialists.css" />
+    <title>The Analog Specialists</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="heading heading--page">
+        <span class="the-analog">The</span><br />
+        <span class="analog">Analog</span><br />
+        <span class="specialists">Specialists</span>
+      </h1>
+    </header>
+    <nav class="main-menu">
+      <div class="search">
+        <input type="search" name="search" id="search" class="search-bar" placeholder="Search">
+        <button type="button" class="btn-toggle btn-toggle--search">Search</button>
+      </div>
+      <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+      <ul class="main-menu__nav">
+        <li><a href="the-analog-specialists-index.html" class="active-page">Home</a></li>
+        <li><a href="the-analog-specialists-sale.html">For Sale</a></li>
+        <li><a href="the-analog-specialists-repair.html">Repairs</a></li> 
+        <li><a href="the-analog-specialists-about.html">About</a></li>
+        <li><a href="the-analog-specialists-contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <aside class="hero-image">
+      <div class="hero-image__inner">
+        <h2>Feel the sound of our Piano.</h2>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="main-content__intro">
+        <h1 class="heading heading--main">The Analog Specialists</h1>
+        <p>
+          We Specialise in the sales and repair of classic keyboards, in
+          particular the Fender Rhodes, Wurlitzer Ep200, and Hohner Clavinet.
+        </p>
+      </div>
+      <section class="section">
+        <article class="article">
+          <h2 class="heading heading--article">Rhodes Piano</h2>
+          <div class="article__image">
+            <img src="../../assets/image/New York.jpg"  alt="New York City" />
+          </div>
+          <div class="article__description">
+            <p>
+              The Rhodes piano is an electro-mechanical piano, invented by
+              <strong>Haroid Rhodes</strong> during the fifties and manufactured in a number of
+              models.
+            </p>
+            <div class="description__details">
+              <p>First in collaboration with Fender and after 1965 by CBS.</p>
+              <p>
+                It employes piano-like keyboard with hammers that hit small metal
+                lines, amplified by electromagnetic pickups.
+              </p>
+            </div>
+            <div class="read-more-container">
+              <a href="the-analog-specialists-sale.html#rhodes" class="read-more">Read more</a>
+            </div>
+          </div>
+        </article>
+        <article class="article">
+          <h2 class="heading heading--article">Wurfitzer Piano</h2>
+          <div class="article__image">
+            <img src="../../assets/image/Paris_city.jpg"  alt="Paris City" />
+          </div>
+          <div class="article__description">
+            <p>
+              The Wurfitzer electric piano is an electro-mechanical piano
+              created by the <strong>Rudolph Wurfitzer</strong> Company of Mississippi.
+            </p>
+            <div class="description__details">
+              <p>
+                The Wurfitzer company itself never called the instrument an
+                'electric piano', instead inventing the phrase 'Electronic Piano'
+                and using this as a trademark throughoutthe production of the
+                instrument.
+              </p>
+              <p>
+                It employes a piano-like keyboard with hammers that hit small
+                metal lines, amplified by electromagnetic pickups.
+              </p>
+            </div>
+            <div class="read-more-container">
+              <a href="the-analog-specialists-sale.html#wurfitzer" class="read-more">Read more</a>
+            </div>
+          </div>
+        </article>
+        <article class="article">
+          <h2 class="heading heading--article">Clavinet Piano</h2>
+          <div class="article__image">
+            <img src="../../assets/image/San Fransisco.jpg" alt="San Fransisco City"/>
+          </div>
+          <div class="article__description">
+            <p>
+              A Clavinet is an electronically amplified clavichord manufactured
+              by the <strong>Hohner company</strong>.
+            </p>
+            <div class="description__details">
+              <p>
+                Each key uses a rubber tip to perform a hammer on a string Its
+                distinctive bright staccato sound is often compared to that of an
+                electric guitar.
+              </p>
+              <p>
+                Various models were produced over the years, including the models
+                I, II, L, C, D6, and E7.
+              </p>
+            </div>
+            <div class="read-more-container">
+              <a href="the-analog-specialists-sale.html#clavinet" class="read-more">Read more</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy;2025 Aug, The Analog Specialists</p>
+    </footer>
+    <script>
+      const toggleNav =
+        document.getElementsByClassName("btn-toggle--nav")[0];
+      const menuNav = document.getElementsByClassName("main-menu__nav")[0];
+      let menuNavHeight = menuNav.scrollHeight;
+ 
+      let searchButton = document.getElementsByClassName('btn-toggle--search')[0];
+      let searchBar = document.getElementsByClassName('search-bar')[0];
+
+
+      toggleNav.addEventListener("click", function (event) {
+        menuNav.classList.toggle("is-open");
+        if (menuNav.classList.contains("is-open")) {
+          menuNav.style.setProperty("height", menuNavHeight + "px");
+        } else {
+          menuNav.style.setProperty("height", "0");
+        }
+      });
+
+      searchButton.addEventListener('click', function(event){
+        searchBar.classList.toggle('is-open');
+      });
+    </script>
+  </body>
+</html>
