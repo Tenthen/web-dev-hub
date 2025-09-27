@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="trigonal.css" />
+    <title>Signup Form Modal</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-logo">
+        <div class="site-logo__image">
+          <img
+            src="../../../assets/image/triagonal_logo.png"
+            alt="Trigonal Logo"
+          />
+        </div>
+        <div class="site-logo__name">
+          <span class="site-logo__name__tri">tri</span
+          ><span class="site-logo__name__go">go</span
+          ><span class="site-logo__name__nal">nal</span>
+        </div>
+      </div>
+
+      <div class="search">
+        <input
+          type="search"
+          name="search"
+          class="search-bar"
+          id="search"
+          placeholder="Search"
+        />
+        <button type="submit" class="btn-toggle btn-toggle--search">
+          Search
+        </button>
+      </div>
+    </header>
+    <nav class="main-menu">
+      <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+      <ul class="menu-nav">
+        <li><a href="#tour">Tour</a></li>
+        <li><a href="#explore">Explore</a></li>
+        <li><a href="#sign in" class="button-signup">Sign In</a></li>
+        <li><a href="#sign up" class="featured button-signup">Sign Up</a></li>
+      </ul>
+    </nav>
+    <aside class="hero-section">
+      <div class="hero-section__inner">
+        <h1>Share your life in photos.</h1>
+        <button type="button" class="button button--cta button-signup">
+          Sign up now
+        </button>
+      </div>
+    </aside>
+    <main class="main-content">
+      <section class="section-content">
+        <article class="article">
+          <h2 class="heading">Upload</h2>
+          <h4>More ways to get your photos online.</h4>
+          <p>
+            Multiple ways to upload to Trigonal through the web. Your mobile
+            device, your email, or your favorite photo applications.
+          </p>
+          <div class="section__icon-wrapper section__icon-wrapper--upload">
+            <a class="icons" href="#mobile-device">Mobile Device</a>
+            <a class="icons" href="#email">Email</a>
+            <a class="icons" href="#photo-application">Photo Application</a>
+          </div>
+        </article>
+        <article class="article">
+          <h2 class="heading">Discover</h2>
+          <h4>See what's going on in your world.</h4>
+          <p>
+            Keep up with your friends and share your stories with comments and
+            notes. Add rich information like tags, locators & poeple.
+          </p>
+          <div class="section__icon-wrapper section__icon-wrapper--discover">
+            <a class="icons" href="#tags">Tags</a>
+            <a class="icons" href="#poeple">Poeple</a>
+            <a class="icons" href="#locators">Locators</a>
+          </div>
+        </article>
+        <article class="article">
+          <h2 class="heading">Share</h2>
+          <h4>Your photos are everywhere you are.</h4>
+          <p>
+            Upload your photos once to Trigonal then easily and safely share
+            them through Facevook, Twitter, email, blogs and more.
+          </p>
+          <div class="section__icon-wrapper section__icon-wrapper--share">
+            <a class="icons" href="#twitter">Twitter</a>
+            <a class="icons" href="#instagram">Instagram</a>
+            <a class="icons" href="#telegram">Telegram</a>
+            <a class="icons" href="#youtube">YouTube</a>
+            <a class="icons" href="#linkedin">Linkedin</a>
+            <a class="icons" href="#pinterest">Pinterest</a>
+            <a class="icons" href="#facebook">Facebook</a>
+          </div>
+        </article>
+      </section>
+      <div class="cta-section">
+        <div class="cta-section__btn-container">
+          <button type="button" class="button button--cta button-signup">
+            Sign up now
+          </button>
+        </div>
+        <div class="cta-section__content">
+          <p>
+            It takes less than a minute to create your free account & start
+            sharing!
+          </p>
+          <p>
+            <a class="icons icons--google" href="#">Google account</a>
+            <a href="#" class="icons icons--facebook">Facebook account</a> Have
+            a Google or Facebook account? You can use them to sign in!
+          </p>
+        </div>
+      </div>
+      <section class="section-content">
+        <article class="article article--image">
+          <h3>Community</h3>
+          <h5>Trigonal is made of people.</h5>
+          <div class="article__image">
+            <img src="../../../assets/image/Community.jpg" alt="Community" />
+          </div>
+          <p>
+            Join one of over 10 million active groups to take part in the
+            conversation. Learn from our community.
+          </p>
+        </article>
+        <article class="article article--image">
+          <h3>Privacy</h3>
+          <h5>Your photos are safe with us.</h5>
+          <div class="article__image">
+            <img src="../../../assets/image/security.jpg" alt="" />
+          </div>
+          <p>
+            Share photos only with the poeple you want to. With our easy privacy
+            settings.
+          </p>
+        </article>
+        <article class="article article--image">
+          <h3>Trigonal on the go</h3>
+          <h5>Moblie options to keep you going.</h5>
+          <div class="article__image">
+            <img src="../../../assets/image/connection.png" alt="" />
+          </div>
+          <p>
+            Trigonal is always in your back pocket with apps for Iphone, windows
+            and more.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy;2025 Aug Trigonal Company.</p>
+    </footer>
+
+    <div class="modal-dropback">
+      <dialog class="modal modal--signup">
+        <h3 class="heading heading--modal">Sign up for extra Explore</h3>
+        <p>Sign up and have the globe at your lab.</p>
+        <button type="button" class="btn-toggle btn-toggle--modal">
+          Close
+        </button>
+        <form action="#singup" class="form form--signup">
+          <fieldset>
+            <legend>Signup form</legend>
+            <div class="form__group form__group--panels">
+              <label for="firstname">Firstname:</label>
+              <input type="text" name="firstname" id="firstname" />
+            </div>
+            <div class="form__group form__group--panels">
+              <label for="lastname">Lastname:</label>
+              <input type="text" name="lastname" id="lastname" />
+            </div>
+            <div class="form__group form__group--buttons">
+              <input
+                type="button"
+                value="Next"
+                class="button button--form button-next"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Signup form</legend>
+            <div class="form__group form__group--panels">
+              <label for="address">Address:</label>
+              <input type="text" name="address" id="address" />
+            </div>
+            <div class="form__group form__group--panels">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="form__group form__group--buttons">
+              <input
+                type="button"
+                value="Back"
+                class="button button--form button-back"
+              />
+              <input type="button" value="Submit" class="button button--form" />
+            </div>
+          </fieldset>
+        </form>
+      </dialog>
+    </div>
+
+    <script>
+      let searchBar = document.getElementById("search");
+      let searchButton =
+        document.getElementsByClassName("btn-toggle--search")[0];
+
+      let toggleButton = document.getElementsByClassName("btn-toggle--nav")[0];
+      let menuNav = document.getElementsByClassName("menu-nav")[0];
+      let navHeight = menuNav.scrollHeight;
+
+      let signupOpenButtons = document.getElementsByClassName("button-signup");
+      let signupCloseButton = document.getElementsByClassName("btn-toggle--modal")[0];
+      let signupModal = document.getElementsByClassName("modal--signup")[0];
+      let signupModalDropback = document.getElementsByClassName("modal-dropback")[0];
+
+      let nextButton = document.getElementsByClassName("button-next")[0];
+      let backButton = document.getElementsByClassName("button-back")[0];
+      let formSections = document.getElementsByTagName("fieldset");
+
+      searchButton.addEventListener("click", function (event) {
+        searchBar.classList.toggle("is-open");
+      });
+
+      toggleButton.addEventListener("click", function (event) {
+        menuNav.classList.toggle("is-open");
+
+        if (menuNav.classList.contains("is-open")) {
+          menuNav.style.setProperty("height", navHeight + "px");
+        } else {
+          menuNav.style.setProperty("height", "0");
+        }
+      });
+
+      for (let i = 0; i < signupOpenButtons.length; i++) {
+        signupOpenButtons[i].addEventListener("click", function (event) {
+          signupModal.classList.add("modal-is-open");
+          signupModalDropback.classList.add("modal-is-open");
+        });
+      }
+      signupCloseButton.addEventListener("click", function (event) {
+        signupModal.classList.remove("modal-is-open");
+        signupModalDropback.classList.remove("modal-is-open");
+      });
+      
+
+      nextButton.addEventListener("click", function (event) {
+        formSections[1].classList.add("is-open");
+        formSections[0].classList.add("is-close");
+        if (formSections[0].classList.contains("is-open")) {
+          formSections[0].classList.remove("is-open");
+        }
+      });
+      backButton.addEventListener("click", function (event) {
+        // formSections[1].classList.add('is-close');
+        formSections[0].classList.add("is-open");
+        if (formSections[1].classList.contains("is-open")) {
+          formSections[1].classList.remove("is-open");
+        }
+      });
+    </script>
+  </body>
+</html>
