@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="yoko-kitchen.css" />
+    <title>Yoko Kitchen</title>
+  </head>
+  <body>
+    <div class="l-homepage">
+      <header class="header-site">
+        <h1 class="heading heading--site">Yoko Kitchen</h1>
+      </header>
+      <nav class="main-menu">
+        <div class="search">
+          <input
+            type="search"
+            name="search"
+            class="search__bar"
+            id="search"
+            placeholder="Search"
+          />
+          <button type="button" class="btn-toggle btn-toggle--search"></button>
+        </div>
+        <button type="button" class="btn-toggle btn-toggle--nav">Open</button>
+        <ul class="main-menu__nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#catering">Catering</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <main class="main-content">
+        <section class="main-section">
+          <figure class="main-section__image">
+            <img src="../../assets/image/hamburger-small.jpg" alt="Hamburger" />
+            <figcaption>Hamburger</figcaption>
+          </figure>
+          <article class="main-section__content">
+            <h2 class="heading">Sauces Masterclass</h2>
+            <h3 class="heading">One day workshop</h3>
+            <p>
+              A five week introduction to traditional Japanese vegetarian meals,
+              teaching you a selection of rice and noodle dishes.
+            </p>
+            <div class="main-section__content__detail">
+              <p>
+                A five week introduction to traditional Japanese vegetarian
+                meals, teaching you a selection of rice and noodle dishes.
+              </p>
+              <p>
+                An intensive one-day course looking at how to create the most
+                delicious sauces for use in a range of Japanese cookery.
+              </p>
+            </div>
+            <button type="button" class="button button--detail">more</button>
+          </article>
+        </section>
+        <section class="main-section">
+          <figure class="main-section__image">
+            <img
+              src="../../assets/image/foodPlate-square.jpg"
+              alt="Hamburger"
+            />
+            <figcaption>Uzbek</figcaption>
+          </figure>
+          <article class="main-section__content">
+            <h2 class="heading">Japanese Vegeterian</h2>
+            <h3 class="heading">Five week course in London</h3>
+            <p>
+              An intensive one-day course looking at how to create the most
+              delicious sauces for use in a range of Japanese cookery.
+            </p>
+            <div class="main-section__content__detail">
+              <p>
+                A five week introduction to traditional Japanese vegetarian
+                meals, teaching you a selection of rice and noodle dishes.
+              </p>
+              <p>
+                An intensive one-day course looking at how to create the most
+                delicious sauces for use in a range of Japanese cookery.
+              </p>
+            </div>
+            <button type="button" class="button button--detail">more</button>
+          </article>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <article class="sidebar-section">
+          <h3>Popular recipes</h3>
+          <ul class="sidebar__list sidebar__list--recipee">
+            <li><a href="#food-japanese">Yakitori (grilled chicken)</a></li>
+            <li>
+              <a href="#food-japanese">Tsukune (minced chicken patties)</a>
+            </li>
+            <li><a href="#food-japanese">Okonomiyaki (savory pancakes)</a></li>
+            <li><a href="#food-japanese">Mizutaki (chicken stew)</a></li>
+          </ul>
+        </article>
+        <article class="sidebar-section sidebar-section--contact">
+          <h2>Contact</h2>
+          <address>
+            <p>
+              <span>Yoko's Kitchen</span><br />
+              <span>27 Redchurch Street</span><br />
+              <span>Shoreditch</span><br />
+              <span>London E2 7DP</span>
+            </p>
+          </address>
+        </article>
+      </aside>
+      <footer class="footer">
+        <p>&copy; 2021 March, Yoko Kitchen</p>
+      </footer>
+    </div>
+
+    <script>
+      let toggleNav = document.getElementsByClassName("btn-toggle--nav")[0];
+      let nav = document.getElementsByClassName("main-menu__nav")[0];
+      let navHeight = nav.scrollHeight;
+
+      let searchButton =
+        document.getElementsByClassName("btn-toggle--search")[0];
+      let searchBar = document.getElementsByClassName("search__bar")[0];
+
+      let toggleSections = document.getElementsByClassName("button--detail");
+      let detailSections = document.getElementsByClassName(
+        "main-section__content__detail"
+      );
+      let detailSectionsHeight = 0;
+
+      toggleNav.addEventListener("click", function (event) {
+        nav.classList.toggle("is-open");
+        if (nav.classList.contains("is-open")) {
+          nav.style.setProperty("height", navHeight + "px");
+        } else {
+          nav.style.setProperty("height", "0");
+        }
+      });
+
+      searchButton.addEventListener("click", function (event) {
+        searchBar.classList.toggle("is-open");
+      });
+
+      for (let i = 0; i < detailSections.length; i++) {
+        toggleSections[i].addEventListener("click", function (event) {
+          detailSectionsHeight = detailSections[i].scrollHeight;
+          detailSections[i].classList.toggle("is-open");
+
+          if (detailSections[i].classList.contains("is-open")) {
+            detailSections[i].style.setProperty(
+              "height",
+              detailSectionsHeight + "px"
+            );
+            toggleSections[i].innerHTML = "Less";
+          } else {
+            detailSections[i].style.setProperty("height", "0");
+            toggleSections[i].innerHTML = "More";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
